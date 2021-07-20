@@ -1,0 +1,15 @@
+export const ORDER_TYPES_LIST = 'order_types'
+export const AGAINST_FORM_LIST = 'against_form'
+export const YES_NO_LIST = 'yes_no';
+export const PARTY_LIST = 'party_list';
+export const DELIVERY_TO_LIST = 'delivery_to';
+export const ORDER_TYPE_LIST = 'order_type';
+export const AMENDMENT_LIST = 'amendment_list';
+export const CONSIGNEE_LIST = 'consignee_list';
+export const V_TYPE_LIST = 'v_type';
+export const TO_PLACE_LIST = 'to_place_list';
+export const ITEM_LIST = 'item_list';
+export const BF_LIST = 'bf_list';
+export const UNIT_LIST = 'unit_list';
+export const GRAIN_LIST = 'grain_list';
+export const GSM_LIST = 'gsm_list';

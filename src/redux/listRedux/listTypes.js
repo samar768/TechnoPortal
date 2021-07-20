@@ -1,0 +1,2 @@
+export const FETCH_LIST = 'FETCH_LIST';
+export const FETCH_FILTERED_LIST = 'FETCH_FILTERED_LIST';
