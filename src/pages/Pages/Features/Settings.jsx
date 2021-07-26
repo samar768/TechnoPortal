@@ -36,6 +36,9 @@ export default function Settings() {
                   <Link to="/feature/setting-detail" class="card-cta">
                     Change Setting <i class="fas fa-chevron-right"></i>
                   </Link>
+                  <Link to="/feature/tickets" class="card-cta">
+                    Change Setting Testing<i class="fas fa-chevron-right"></i>
+                  </Link>
                 </div>
               </div>
             </div>

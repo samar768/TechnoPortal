@@ -130,7 +130,7 @@ const Contact = React.lazy(() => import('./pages/Pages/Utilities/Contact'));
 const history = React.lazy(() => import('./history'));
 
 // =================================Start Sale Modules======================================
-const SaleOrder = React.lazy(() => import('./pages/Sales/SaleOrder'));
+const SaleOrder = React.lazy(() => import('./pages/Sales/Order/SaleOrder'));
 // =================================End Sale Modules========================================
 
 
@@ -272,9 +272,16 @@ function App() {
           <Route path="/utilities/subscribe" component={Subscribe} />
           <Route path="/utilities/contact" component={Contact} />
 
-          {/* Sales Modules */}
-          <Route path="/sales/saleorder" component={SaleOrder} />
-
+         {/* Start Sales Modules */}
+            <Route
+              path="/sales/saleorder"
+              render={(props) => (
+                <SaleOrder {...props} 
+                order_type={'View'} 
+                order_id={'12312321'}  
+                />
+              )}
+            />
           {/* End Sales Modules */}
         </Switch>
         </React.Suspense>

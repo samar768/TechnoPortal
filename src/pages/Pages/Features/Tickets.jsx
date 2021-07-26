@@ -148,7 +148,7 @@ export class Tickets extends Component {
                             <form>
                               <div class="form-group">
                                 <textarea
-                                  class="summernote form-control"
+                                  class="summernote form-control1"
                                   placeholder="Type a reply ..."
                                 ></textarea>
                               </div>

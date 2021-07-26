@@ -14,7 +14,7 @@ import {
 const UDLSelect = (props) => {
 	// retrieve and sort the udl the udl
 	let udlList = getUDLList(props.udlListName, props.udlListType);
-	udlList = udlList.sort((a, b) => a.Description.localeCompare(b.Description));
+	// udlList = udlList.sort((a, b) => a.Description.localeCompare(b.Description));
 
 	// renders the select control
 	const renderSelect = (udlList, defaultPleaseSelect, defaultValue, exclusionList) => {
@@ -113,23 +113,23 @@ const UDLSelect = (props) => {
 
 // prop types for select control
 UDLSelect.propTypes = {
-	// udlListName: PropTypes.string.isRequired,
-	// selectId: PropTypes.string.isRequired,
-	// selectSizes: PropTypes.array.isRequired,
-	// defaultPleaseSelect: PropTypes.bool.isRequired,
-	// defaultValue: PropTypes.string.isRequired,
-	// handleOnChange: PropTypes.func.isRequired,
-	// labelDescription: PropTypes.string.isRequired,
-	// isDisabled: PropTypes.bool.isRequired,
-	// isMandatory: PropTypes.bool.isRequired,
-	// isValid: PropTypes.bool.isRequired,
-	// validationMessage: PropTypes.string.isRequired,
-	// exclusionList: PropTypes.array,
-	// udlListType: PropTypes.string,
-	// orderListBy: PropTypes.string,
-	// isLoading: PropTypes.bool,
-	// isViewOnly: PropTypes.bool,
-	// formatValueAsCurrency: PropTypes.bool
+	udlListName: PropTypes.string.isRequired,
+	selectId: PropTypes.string.isRequired,
+	selectSizes: PropTypes.array.isRequired,
+	defaultPleaseSelect: PropTypes.bool.isRequired,
+	defaultValue: PropTypes.string.isRequired,
+	handleOnChange: PropTypes.func.isRequired,
+	labelDescription: PropTypes.string.isRequired,
+	isDisabled: PropTypes.bool.isRequired,
+	isMandatory: PropTypes.bool.isRequired,
+	isValid: PropTypes.bool.isRequired,
+	validationMessage: PropTypes.string.isRequired,
+	exclusionList: PropTypes.array,
+	udlListType: PropTypes.string,
+	orderListBy: PropTypes.string,
+	isLoading: PropTypes.bool,
+	isViewOnly: PropTypes.bool,
+	formatValueAsCurrency: PropTypes.bool
 };
 
 // export the select control

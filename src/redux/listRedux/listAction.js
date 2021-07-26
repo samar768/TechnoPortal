@@ -3,7 +3,7 @@ import {
   FETCH_LIST
 } from './listTypes';
 
-import { fetchFilteredList, fetchList } from '../../api/index';
+import { fetchFilteredList, fetchList } from '../../api/index.js';
 
 export const getList = (list_type) => async (dispatch) => {
   try {

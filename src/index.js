@@ -1,13 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 // import axios from 'axios';
-// import { Provider } from 'react-redux';
-// import { createStore, applyMiddleware, compose } from 'redux';
-// import reduxThunk from 'redux-thunk';
-// import reduxLogger from 'redux-logger';
+import { Provider } from 'react-redux';
+import { createStore, applyMiddleware, compose } from 'redux';
+import reduxThunk from 'redux-thunk';
+import reduxLogger from 'redux-logger';
 // eslint-disable-next-line no-undef
 import { BrowserRouter } from "react-router-dom";
-// import reducers from './redux/reducers';
+import reducers from './redux/reducers';
 import App from "./App";
 
 // // Template JS File
@@ -122,23 +122,24 @@ require("./js/js/scripts");
 require("./js/js/custom");
 require("./js/js/stisla");
 
-// const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-// const store = createStore(
-//     reducers,
-//     composeEnhancers(applyMiddleware(reduxThunk, reduxLogger))
-// );
-
+const store = createStore(
+    reducers,
+    composeEnhancers(applyMiddleware(reduxThunk, reduxLogger))
+);
 ReactDOM.render(
   <BrowserRouter>
     <React.StrictMode>
-    {/* <Provider store={store}> */}
+  <Provider store={store}>
       <App />
-      {/* </Provider> */}
-    </React.StrictMode>{" "}
-  </BrowserRouter>,
-  document.getElementById("root")
+  </Provider>
+  </React.StrictMode>
+  </BrowserRouter>
+ ,
+  document.querySelector('#root')
 );
+
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

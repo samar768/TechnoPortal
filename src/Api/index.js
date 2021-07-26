@@ -1,8 +1,8 @@
 import axios from 'axios';
 
-const urlLists = 'http://localhost:5000/lists';
-const urlLogin = 'http://localhost:5000/login';
-const urlLogic = 'http://localhost:5000/logic';
+const urlLists = 'http://localhost:5030/lists';
+const urlLogin = 'http://localhost:5030/login';
+const urlLogic = 'http://localhost:5030/logic';
 
 export const fetchList = (list_type) => axios.get(`${urlLists}/list/${list_type}`);
 export const fetchFilteredList = (list_type, filter) => axios.get(`${urlLists}/list/${list_type}/${filter}`);

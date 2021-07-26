@@ -54,7 +54,7 @@ const CalendarInput = (props) => {
 
 // prop types for calendar control
 CalendarInput.propTypes = {
-	handleOnChange: PropTypes.func.isRequired,
+	// handleOnChange: PropTypes.func.isRequired,
 	inputId: PropTypes.string.isRequired,
 	inputSizes: PropTypes.array.isRequired,
 	isDisabled: PropTypes.bool.isRequired,
