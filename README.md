@@ -1,4 +1,4 @@
-# ERP APP ⚡️ [![GitHub](https://img.shields.io/github/license/samar768/TechnoPortal?color=blue)](https://github.com/samar768/stisla-react-free-admin-dashboard/blob/master/License.md)
+# ERP APP ⚡️ [![GitHub](https://img.shields.io/github/license/samar768/TechnoPortal?color=blue)](https://github.com/samar768/TechnoPortal/blob/master/License.md)
 
 <p align="center">
   <a href="https://samarapps.netlify.app/">
@@ -15,9 +15,12 @@
 
 <span align="center">
 
-![GitHub last commit](https://img.shields.io/github/last-commit/shivammodi456/stisla-react-free-admin-dashboard)
-![GitHub repo size in bytes](https://img.shields.io/github/repo-size/shivammodi456/stisla-react-free-admin-dashboard)
-[![License](https://img.shields.io/github/license/shivammodi456/stisla-react-free-admin-dashboard)](LICENSE)
+![GitHub last commit](https://img.shields.io/github/last-commit/@samar768
+samar768/TechnoPortal)
+![GitHub repo size in bytes](https://img.shields.io/github/repo-size/@samar768
+samar768/TechnoPortal)
+[![License](https://img.shields.io/github/license/@samar768
+samar768/TechnoPortal)](LICENSE)
 
 
 </span>
@@ -70,14 +73,15 @@ Stisla is a Free Bootstrap HTML Admin Template which will help you to speed up y
 
 ## How To Use 🔧
 
-From your command line, first clone stisla-react-free-admin-dashboard:
+From your command line, first clone TechnoPortal:
 
 ```bash
 # Clone this repository
-$ git clone https://github.com/shivammodi456/stisla-react-free-admin-dashboard
+$ git clone https://github.com/@samar768
+samar768/TechnoPortal
 
 # Go into the repository
-$ cd stisla-react-free-admin-dashboard
+$ cd TechnoPortal
 
 # Remove current origin repository
 $ git remote remove origin
@@ -123,7 +127,7 @@ Once your server has started, go to this url `http://localhost:3000/` and you wi
 
 ## Contributing
 
-If you Want to help stisla-react-free-admin-dashboard to get better? Let's contribute and send pull request 
+If you Want to help TechnoPortal to get better? Let's contribute and send pull request 
 
   **Issue**:
    => In auth section after navigate to Login or Register Page or any Page where Sidebar is not avalible and going back to HomePage  then navigation threw is not Working . On page refresh it should show Loading Indicator until data not retrieved.
@@ -131,7 +135,7 @@ If you Want to help stisla-react-free-admin-dashboard to get better? Let's contr
 
 ## License
 
-stisla-react-free-admin-dashboard is under the [MIT License](LICENSE)
+TechnoPortal is under the [MIT License](LICENSE)
 
 ## Netlify Quick Deploy
 
