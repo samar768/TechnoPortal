@@ -131,6 +131,7 @@ const history = React.lazy(() => import('./history'));
 
 // =================================Start Sale Modules======================================
 const SaleOrder = React.lazy(() => import('./pages/Sales/Order/SaleOrder'));
+const SaleInvoice = React.lazy(() => import('./pages/Sales/SaleInvoice-Reel/SaleInvoice_Reel.jsx'));
 // =================================End Sale Modules========================================
 
 
@@ -277,6 +278,16 @@ function App() {
               path="/sales/saleorder"
               render={(props) => (
                 <SaleOrder {...props} 
+                order_type={'View'} 
+                order_id={'12312321'}  
+                />
+              )}
+            />
+
+<Route
+              path="/sales/saleInvoice-Reel"
+              render={(props) => (
+                <SaleInvoice {...props} 
                 order_type={'View'} 
                 order_id={'12312321'}  
                 />

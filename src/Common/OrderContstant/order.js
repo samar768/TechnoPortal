@@ -18,6 +18,28 @@ export const V_NO = 'TxtVNo';
 export const DOC_ID = 'StrDocID';
 export const DISTRIBUTOR = 'TxtDistributor';
 
+export const HEADER_TABLE={
+     TYPE : 'TxtType',
+     PARTY : 'TxtParty',
+     PARTY_ORDER_NO : 'TxtPOrdNo',
+     PARTY_ORDER_DATE : 'TxtPtyOrdDate',
+     ORDER_NO : 'TxtRecId',
+     ORDER_DATE : 'TxtOrdDate',
+     AGAINST_FORM : 'TxtAgtForm',
+     EXCISABLE : 'TxtExcisable',
+     ORDER_TYPE : 'TxtOrderType',
+     DELIVERY_TO : 'TxtDeliveryAt',
+     DELIVERY_DATE : 'TxtDeliveryDate',
+     AMENDMENT_ORDER_NO : 'TxtAmdOrderNo',
+     CONSIGNEE : 'TxtConsignee',
+     SALES_TYPE : 'TxtSaleV_type',
+     TO_PLACE : 'TxtToPlace',
+     CONTRACTUAL_ORDER_REF : 'TxtContratualOrdRef',
+     V_NO : 'TxtVNo',
+     DOC_ID : 'StrDocID',
+     DISTRIBUTOR : 'TxtDistributor'
+};
+
 export const ITEM = {
   V_SNO: 'V_SNO',
   ITEM_CODE: 'ItemCode',
@@ -46,7 +68,7 @@ export const ITEM = {
   ITEM_ADJ: 'ItemAdj',
   ITEM_ADJ_REEL: 'ItemAdjReel',
   ITEM_ADJ_WEIGHT: 'ItemAdjWeight',
-}
+};
  
 // export const s = 'ItemDesc';
 // export const s = 'SizeReel';

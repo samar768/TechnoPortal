@@ -18,7 +18,7 @@ export class SideBar extends Component {
             <Link to="/"> Sales Dashboard </Link>{" "}
           </div>{" "}
           <div className="sidebar-brand sidebar-brand-sm">
-            <Link to="/"> St </Link>{" "}
+            <Link to="/"> Menu </Link>{" "}
           </div>{" "}
           <ul className="sidebar-menu mb-5">
             {" "}

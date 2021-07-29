@@ -18,7 +18,7 @@
 // import TableFooter from './TableFooter';
 // import ModalConfirmation from './ModalConfirmation';
 // import FileCsvUploadModal from './FileCsvUploadModal';
-// import TextInput from './TextInput';
+ import TextInput from './TextInput';
 // import Select from './Select';
 // import MaskFormatter from './MaskFormatter';
 // import Modal from './Modal';
@@ -29,6 +29,7 @@ import UDLSelect from './UDLSelect';
 import ComponentLoader from './ComponentLoader';
 import CalendarInput from './CalendarInput';
 import  SaveCancelButtons from './SaveCancelButtons'
+import PageHeading from './PageHeading';
 
 // export for ease of access
 export {
@@ -37,4 +38,6 @@ export {
 	Numeral,
 	ComponentLoader,
 	CalendarInput,
+	PageHeading,
+	TextInput
 };

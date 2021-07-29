@@ -124,17 +124,21 @@ require("./js/js/stisla");
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
+// const store = createStore(
+//     reducers,
+//     composeEnhancers(applyMiddleware(reduxThunk, reduxLogger))
+// );
 const store = createStore(
-    reducers,
-    composeEnhancers(applyMiddleware(reduxThunk, reduxLogger))
+  reducers,
+  composeEnhancers(applyMiddleware(reduxThunk))
 );
 ReactDOM.render(
   <BrowserRouter>
-    <React.StrictMode>
+    {/* <React.StrictMode> */}
   <Provider store={store}>
       <App />
   </Provider>
-  </React.StrictMode>
+  {/* </React.StrictMode> */}
   </BrowserRouter>
  ,
   document.querySelector('#root')

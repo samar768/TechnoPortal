@@ -11,9 +11,6 @@ import {Promise} from "bluebird";
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import _, { set } from 'lodash';
-import format from 'date-fns/format';
-import DatePicker from 'react-datepicker';
-import parseISO from 'date-fns/parseISO';
 import {
   getFilteredList
   , getList
@@ -32,7 +29,7 @@ export class SaleOrderPage extends Component {
   constructor(props) {
     super(props);
     this.setDefaultData();
-    this.handleStateUpdate = this.handleStateUpdate.bind(this);
+    this.HandleStateUpdate = this.HandleStateUpdate.bind(this);
     this.handleItemStateUpdate = this.handleItemStateUpdate.bind(this);
     this.handleItemStateCreate = this.handleItemStateCreate.bind(this);
     this.handleItemStateRemove = this.handleItemStateRemove.bind(this);
@@ -42,14 +39,14 @@ export class SaleOrderPage extends Component {
 
     switch (this.props.order_type) {
       case 'Add': {
-        
+
         break;
       }
       default:
     }
   }
 
-  async handleStateUpdate(keyValueArray) {
+  async HandleStateUpdate(keyValueArray) {
     let clonedState = _.cloneDeep(this.props.orderData);
 
     await Promise.map(keyValueArray, async (keyValue) => {
@@ -81,12 +78,13 @@ export class SaleOrderPage extends Component {
   render() {
   return (
     <>
-    <OrderHeader
-              orderData={this.props.orderData}
+    <OrderHeader 
+
+              orderData={ this.props.orderData}
               getList={this.props.getList}
               listData={this.props.listData}
               getFilteredList={this.props.getFilteredList}
-              handleStateUpdate={this.handleStateUpdate}
+              handleStateUpdate={this.HandleStateUpdate}
              /> 
     </>
   );

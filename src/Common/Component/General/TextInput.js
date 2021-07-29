@@ -26,10 +26,12 @@ const TextInput = (props) => (
 					<input
 						type='text'
 						name={props.inputId}
+						// className={`form-control ${props.isValid === false ? 'is-invalid' : ''} ${props.isMandatory ? 'is-required-field' : ''}`}
 						className={`form-control ${props.isValid === false ? 'is-invalid' : ''} ${props.isMandatory ? 'is-required-field' : ''}`}
 						id={props.inputId}
 						disabled={IS_VIEW_MODE || props.isDisabled}
 						value={props.value}
+						// onChange={(event,data)=> {props.handleOnChange(event,data)}}
 						onChange={props.handleOnChange}
 						onBlur={props.handleOnBlur}
 						key={props.inputId}

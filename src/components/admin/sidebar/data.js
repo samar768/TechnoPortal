@@ -36,7 +36,7 @@ export const Data = {
                     url: '/sales/saleorder'
                 }, {
                     name: 'Sale Invoice',
-                    url: '/layout/transparent-sidebar'
+                    url: '/sales/saleInvoice-Reel'
 
                 }, {
 

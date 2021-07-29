@@ -2,11 +2,15 @@
 /* eslint-disable import/no-anonymous-default-export */
 import _ from 'lodash';
 import { UPDATE_ORDER, UPDATE_ITEM_ORDER, REMOVE_ITEM_ORDER } from './orderTypes';
-import { ITEM } from '../../Common/OrderContstant/order';
+import { ITEM} from '../../Common/OrderContstant/order';
+
 
 // declare initial state
 const INITIAL_STATE = {
-  'items': {}
+  'items': {},
+    TYPE:'SORD',
+    PARTY:'SAMAR'
+  
 };
 
 export default (state = INITIAL_STATE, action) => {
