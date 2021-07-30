@@ -107,8 +107,9 @@ function OrderHeader(props) {
   };
 
   return (
-    <form onSubmit={onFormSubmit}>
-     
+
+    <div className='form-group'>
+      <form onSubmit={onFormSubmit}>
         <div className="main-content">
           <div id="app">
             <section className="section">
@@ -116,243 +117,354 @@ function OrderHeader(props) {
                 <h1>Sale Order</h1>
               </div>
             </section>
-            <div class="section-body">
-            <div class="row">
-            <div class="col-08 col-sm-08 col-lg-08">
-                <div class="card">
-                  <div class="card-body">
-                    <ul class="nav nav-tabs" id="myTab5" role="tablist">
-                      <li class="nav-item">
-                        <a
-                          class="nav-link active"
-                          id="home-tab5"
-                          data-toggle="tab"
-                          href="#home5"
-                          role="tab"
-                          aria-controls="home"
-                          aria-selected="true"
+            <div className="section-body">
+              <div className="row">
+                <div className="col-12 col-md-12 col-lg-12" >
+                  <div className="card">
+                    <div className="card-body">
+                      <ul className="nav nav-tabs" id="myTab5" role="tablist">
+                        <li className="nav-item">
+                          <a
+                            className="nav-link active"
+                            id="home-tab5"
+                            data-toggle="tab"
+                            href="#home5"
+                            role="tab"
+                            aria-controls="home"
+                            aria-selected="true"
+                          >
+                            <i className="fas fa-home"></i> General
+                          </a>
+                        </li>
+                        <li className="nav-item">
+                          <a
+                            className="nav-link"
+                            id="profile-tab5"
+                            data-toggle="tab"
+                            href="#profile5"
+                            role="tab"
+                            aria-controls="profile"
+                            aria-selected="false"
+                          >
+                            <i className="fas fa-id-card"></i> Terms&Condition
+                          </a>
+                        </li>
+                      </ul>
+                      <div className="tab-content" id="myTabContent5">
+                        <div
+                          className="tab-pane fade show active"
+                          id="home5"
+                          role="tabpanel"
+                          aria-labelledby="home-tab5"
                         >
-                          <i class="fas fa-home"></i> General
-                        </a>
-                      </li>
-                      <li class="nav-item">
-                        <a
-                          class="nav-link"
-                          id="profile-tab5"
-                          data-toggle="tab"
-                          href="#profile5"
-                          role="tab"
-                          aria-controls="profile"
-                          aria-selected="false"
-                        >
-                          <i class="fas fa-id-card"></i> Terms&Condition
-                        </a>
-                      </li>
-                    </ul>
-                    <div class="tab-content" id="myTabContent5">
-                      <div
-                        class="tab-pane fade show active"
-                        id="home5"
-                        role="tabpanel"
-                        aria-labelledby="home-tab5"
-                      >
-                         <div className="card">
-                        <div className="row">
-                          <div className="col-6 col-md-6 col-lg-12">
-                            <div className="card card-primary">
-                              <div className="card-body">
-                                {/* Voucher type Row */}
-                                <div className="row">
-                                  <TextInput
-                                    inputId={TYPE}
-                                    labelDescription="Voucher Type"
-                                    inputSizes={["col-4"]}
-                                    isDisabled={false}
-                                    isMandatory={true}
-                                    value={get(props.orderData, TYPE, "")}
-                                    isValid={true}
-                                    validationMessage=""
-                                    handleOnChange={(event) => handleStateUpdates([{ Key: TYPE, Value: event.target.value }])}
-                                  />
-                                  <TextInput
-                                    inputId={PARTY}
-                                    labelDescription="Party Order No"
-                                    inputSizes={["col-4"]}
-                                    isDisabled={false}
-                                    isMandatory={true}
-                                    value={get(props.orderData, PARTY_ORDER_NO, "")}
-                                    handleOnChange={(event) => { handleStateUpdates([{ Key: PARTY_ORDER_NO, Value: event.target.value }]) }}
-                                    isValid={true}
-                                    validationMessage=""
-                                  />
-                                  <CalendarInput
-                                    inputId={ORDER_DATE}
-                                    labelDescription='Party Order Date'
-                                    inputSizes={['col-4']}
-                                    isMandatory={true}
-                                    handleOnChange={(dateValue) => handleStateUpdates([{
-                                      Key: ORDER_DATE,
-                                      Value: dateValue === '' ?
-                                        format(new Date(), 'yyyy-MM-dd 00:00:00') :
-                                        format(dateValue, 'yyyy-MM-dd 00:00:00')
-                                    }])}
-                                    value={get(props.orderData, ORDER_DATE, format(new Date(), 'yyyy-MM-dd 00:00:00'))}
-                                    isValid={true}
-                                    validationMessage=''
-                                    isLoading={props.isLoading}
-                                    isDisabled={false}
-                                  />
-                                </div>
-                                <div className="row">
-                                <TextInput
-                                    inputId={AGAINST_FORM}
-                                    labelDescription="Against Form"
-                                    inputSizes={["col-4"]}
-                                    isDisabled={false}
-                                    isMandatory={true}
-                                    value={get(props.orderData, AGAINST_FORM, "")}
-                                    isValid={true}
-                                    validationMessage=""
-                                    handleOnChange={(event) => { handleStateUpdates([{ Key: AGAINST_FORM, Value: event.target.value }]) }}
-                                  />
-                                  <TextInput
-                                    inputId={ORDER_NO}
-                                    labelDescription="Order No"
-                                    inputSizes={["col-4"]}
-                                    isDisabled={false}
-                                    isMandatory={true}
-                                    value={get(props.orderData, ORDER_NO, "")}
-                                    isValid={true}
-                                    validationMessage=""
-                                    handleOnChange={(event) => { handleStateUpdates([{ Key: ORDER_NO, Value: event.target.value }]) }}
-                                  />
-                                 <CalendarInput
-                                    inputId={PARTY_ORDER_DATE}
-                                    labelDescription='Party Order Date'
-                                    inputSizes={['col-4']}
-                                    isMandatory={true}
-                                    handleOnChange={(dateValue) => handleStateUpdates([{
-                                      Key: PARTY_ORDER_DATE,
-                                      Value: dateValue === '' ?
-                                        format(new Date(), 'yyyy-MM-dd 00:00:00') :
-                                        format(dateValue, 'yyyy-MM-dd 00:00:00')
-                                    }])}
-                                    value={get(props.orderData, PARTY_ORDER_DATE, format(new Date(), 'yyyy-MM-dd 00:00:00'))}
-                                    isValid={true}
-                                    validationMessage=''
-                                    isLoading={props.isLoading}
-                                    isDisabled={false}
-                                  />
-                                   
-                                </div>
-                                <div className="row">
-                                <TextInput
-                                    inputId={PARTY}
-                                    labelDescription="Party Name"
-                                    inputSizes={["col-6"]}
-                                    isDisabled={false}
-                                    isMandatory={true}
-                                    value={get(props.orderData, PARTY, "")}
-                                    isValid={true}
-                                    validationMessage=""
-                                    handleOnChange={(event) => { handleStateUpdates([{ Key: PARTY, Value: event.target.value }]) }}
-                                  />
-                                    <TextInput
-                                    inputId={DELIVERY_TO}
-                                    labelDescription="Delivery To"
-                                    inputSizes={["col-6"]}
-                                    isDisabled={false}
-                                    isMandatory={true}
-                                    value={get(props.orderData, DELIVERY_TO, "")}
-                                    isValid={true}
-                                    validationMessage=""
-                                    handleOnChange={(event) => { handleStateUpdates([{ Key: DELIVERY_TO, Value: event.target.value }]) }}
-                                  />
+                          <div className="card">
+                            <div className="row">
+                              <div className="col-sm-12 col-md-12 col-lg-12 ">
+                                <div className="card card-primary">
+                                  <div className="card-body">
+                                    {/* Voucher type Row */}
+                                    <div className="row">
+                                      <TextInput
+                                        inputId={TYPE}
+                                        labelDescription="Voucher Type"
+                                        inputSizes={["col-sm-12 col-md-4 col-lg-4"]}
+                                        isDisabled={false}
+                                        isMandatory={true}
+                                        value={get(props.orderData, TYPE, "")}
+                                        isValid={true}
+                                        validationMessage=""
+                                        handleOnChange={(event) => handleStateUpdates([{ Key: TYPE, Value: event.target.value }])}
+                                      />
+                                      <TextInput
+                                        inputId={PARTY}
+                                        labelDescription="Party Order No"
+                                        inputSizes={["col-sm-12 col-md-4 col-lg-4"]}
+                                        isDisabled={false}
+                                        isMandatory={true}
+                                        value={get(props.orderData, PARTY_ORDER_NO, "")}
+                                        handleOnChange={(event) => { handleStateUpdates([{ Key: PARTY_ORDER_NO, Value: event.target.value }]) }}
+                                        isValid={true}
+                                        validationMessage=""
+                                      />
+                                      <CalendarInput
+                                        inputId={ORDER_DATE}
+                                        labelDescription='Party Order Date'
+                                        inputSizes={['col-sm-12 col-md-4 col-lg-4']}
+                                        isMandatory={true}
+                                        handleOnChange={(dateValue) => handleStateUpdates([{
+                                          Key: ORDER_DATE,
+                                          Value: dateValue === '' ?
+                                            format(new Date(), 'yyyy-MM-dd 00:00:00') :
+                                            format(dateValue, 'yyyy-MM-dd 00:00:00')
+                                        }])}
+                                        value={get(props.orderData, ORDER_DATE, format(new Date(), 'yyyy-MM-dd 00:00:00'))}
+                                        isValid={true}
+                                        validationMessage=''
+                                        isLoading={props.isLoading}
+                                        isDisabled={false}
+                                      />
+                                    </div>
+                                    <div className="row">
+                                      <TextInput
+                                        inputId={AGAINST_FORM}
+                                        labelDescription="Against Form"
+                                        inputSizes={["col-sm-12 col-md-4 col-lg-4"]}
+                                        isDisabled={false}
+                                        isMandatory={true}
+                                        value={get(props.orderData, AGAINST_FORM, "")}
+                                        isValid={true}
+                                        validationMessage=""
+                                        handleOnChange={(event) => { handleStateUpdates([{ Key: AGAINST_FORM, Value: event.target.value }]) }}
+                                      />
+                                      <TextInput
+                                        inputId={ORDER_NO}
+                                        labelDescription="Order No"
+                                        inputSizes={["col-sm-12 col-md-4 col-lg-4"]}
+                                        isDisabled={false}
+                                        isMandatory={true}
+                                        value={get(props.orderData, ORDER_NO, "")}
+                                        isValid={true}
+                                        validationMessage=""
+                                        handleOnChange={(event) => { handleStateUpdates([{ Key: ORDER_NO, Value: event.target.value }]) }}
+                                      />
+                                      <CalendarInput
+                                        inputId={PARTY_ORDER_DATE}
+                                        labelDescription='Party Order Date'
+                                        inputSizes={["col-sm-12 col-md-4 col-lg-4"]}
+                                        isMandatory={true}
+                                        handleOnChange={(dateValue) => handleStateUpdates([{
+                                          Key: PARTY_ORDER_DATE,
+                                          Value: dateValue === '' ?
+                                            format(new Date(), 'yyyy-MM-dd 00:00:00') :
+                                            format(dateValue, 'yyyy-MM-dd 00:00:00')
+                                        }])}
+                                        value={get(props.orderData, PARTY_ORDER_DATE, format(new Date(), 'yyyy-MM-dd 00:00:00'))}
+                                        isValid={true}
+                                        validationMessage=''
+                                        isLoading={props.isLoading}
+                                        isDisabled={false}
+                                      />
+
+                                    </div>
+                                    <div className="row">
+                                      <TextInput
+                                        inputId={PARTY}
+                                        labelDescription="Party Name"
+                                        inputSizes={["col-sm-12 col-md-4 col-lg-4"]}
+                                        isDisabled={false}
+                                        isMandatory={true}
+                                        value={get(props.orderData, PARTY, "")}
+                                        isValid={true}
+                                        validationMessage=""
+                                        handleOnChange={(event) => { handleStateUpdates([{ Key: PARTY, Value: event.target.value }]) }}
+                                      />
+                                      <TextInput
+                                        inputId={DELIVERY_TO}
+                                        labelDescription="Delivery To"
+                                        inputSizes={["col-sm-12 col-md-4 col-lg-4"]}
+                                        isDisabled={false}
+                                        isMandatory={true}
+                                        value={get(props.orderData, DELIVERY_TO, "")}
+                                        isValid={true}
+                                        validationMessage=""
+                                        handleOnChange={(event) => { handleStateUpdates([{ Key: DELIVERY_TO, Value: event.target.value }]) }}
+                                      />
+                                    </div>
+                                    <div className="row">
+                                      <TextInput
+                                        inputId={DISTRIBUTOR}
+                                        labelDescription="Distributor"
+                                        inputSizes={["col-sm-12 col-md-4 col-lg-4"]}
+                                        isDisabled={true}
+                                        isMandatory={true}
+                                        value={get(props.orderData, DISTRIBUTOR, "")}
+                                        isValid={true}
+                                        validationMessage=""
+                                        handleOnChange={(event) => { handleStateUpdates([{ Key: DISTRIBUTOR, Value: event.target.value }]) }}
+                                      />
+
+                                      <div className='form-group col-sm-12 col-md-4 col-lg-4'>
+                                        <label htmlFor="TxtOrderType">Order type</label>
+                                        <div>
+                                          <select name="TxtOrderType" className="form-control form-select-sm" aria-label=".form-select-sm example">
+                                            <option selected>Please Select a Value</option>
+                                            <option value="P">Paper</option>
+                                            <option value="S">Sheet</option>
+                                            <option value="O">Other</option>
+                                          </select>
+                                        </div>
+                                      </div>
+
+                                      <CalendarInput
+                                        inputId={DELIVERY_DATE}
+                                        labelDescription='Delivery Date'
+                                        inputSizes={["col-sm-12 col-md-4 col-lg-4"]}
+                                        isMandatory={true}
+                                        handleOnChange={(dateValue) => handleStateUpdates([{
+                                          Key: DELIVERY_DATE,
+                                          Value: dateValue === '' ?
+                                            format(new Date(), 'yyyy-MM-dd 00:00:00') :
+                                            format(dateValue, 'yyyy-MM-dd 00:00:00')
+                                        }])}
+                                        value={get(props.orderData, DELIVERY_DATE, format(new Date(), 'yyyy-MM-dd 00:00:00'))}
+                                        isValid={true}
+                                        validationMessage=''
+                                        isLoading={props.isLoading}
+                                        isDisabled={false}
+                                      />
+                                    </div>
+                                    <div className="row">
+                                      <TextInput
+                                        inputId={CONSIGNEE}
+                                        labelDescription="Consignee"
+                                        inputSizes={["col-sm-12 col-md-4 col-lg-4"]}
+                                        isDisabled={false}
+                                        isMandatory={true}
+                                        value={get(props.orderData, CONSIGNEE, "")}
+                                        isValid={true}
+                                        validationMessage=""
+                                        handleOnChange={(event) => { handleStateUpdates([{ Key: CONSIGNEE, Value: event.target.value }]) }}
+                                      />
+
+                                      <div className='form-group col-sm-12 col-md-4 col-lg-4'>
+                                        <label htmlFor="TxtPlaceTo">Place To</label>
+                                        <div>
+                                          <select name="TxtPlaceTo" className="form-control form-select-sm" aria-label=".form-select-sm example">
+                                            <option selected>Please Select a Value</option>
+                                            <option value="P">Kanpur</option>
+                                            <option value="S">Mahoba</option>
+                                            <option value="O">Dehli</option>
+                                          </select>
+                                        </div>
+                                      </div>
+
+                                    </div>
                                   </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div className="row">
+                            <div className="col-12 col-md-12 col-lg-12">
+                              <div className="card">
+                                <div className="card-header">
+                                  <h4>Simple</h4>
+                                </div>
+                                <div className="card-body">
+                                  <table className="table table-hover">
+                                    <thead>
+                                      <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">First</th>
+                                        <th scope="col">Last</th>
+                                        <th scope="col">Handle</th>
+                                      </tr>
+                                    </thead>
+                                    <tbody>
+                                      <tr>
+                                        <th scope="row">1</th>
+                                        <td>Mark</td>
+                                        <td>Otto</td>
+                                        <td>@mdo</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">2</th>
+                                        <td>Jacob</td>
+                                        <td>Thornton</td>
+                                        <td>@fat</td>
+                                      </tr>
+                                      <tr>
+                                        <th scope="row">3</th>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>@twitter</td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                </div>
                               </div>
                             </div>
                           </div>
                         </div>
-                      </div>
-                     
-                      </div>
-                      <div
-                        class="tab-pane fade"
-                        id="profile5"
-                        role="tabpanel"
-                        aria-labelledby="profile-tab5"
-                      >
-                        Sed sed metus vel lacus hendrerit tempus. Sed efficitur
-                        velit tortor, ac efficitur est lobortis quis. Nullam
-                        lacinia metus erat, sed fermentum justo rutrum ultrices.
-                        Proin quis iaculis tellus. Etiam ac vehicula eros,
-                        pharetra consectetur dui.
-                      </div>
-                      <div
-                        class="tab-pane fade"
-                        id="contact5"
-                        role="tabpanel"
-                        aria-labelledby="contact-tab5"
-                      >
-                        Vestibulum imperdiet odio sed neque ultricies, ut
-                        dapibus mi maximus. Proin ligula massa, gravida in
-                        lacinia efficitur, hendrerit eget mauris. Pellentesque
-                        fermentum, sem interdum molestie finibus, nulla diam
-                        varius leo, nec varius lectus elit id dolor.
+                        <div
+                          className="tab-pane fade"
+                          id="profile5"
+                          role="tabpanel"
+                          aria-labelledby="profile-tab5"
+                        >
+                          Sed sed metus vel lacus hendrerit tempus. Sed efficitur
+                          velit tortor, ac efficitur est lobortis quis. Nullam
+                          lacinia metus erat, sed fermentum justo rutrum ultrices.
+                          Proin quis iaculis tellus. Etiam ac vehicula eros,
+                          pharetra consectetur dui.
+                        </div>
+                        <div
+                          className="tab-pane fade"
+                          id="contact5"
+                          role="tabpanel"
+                          aria-labelledby="contact-tab5"
+                        >
+                          Vestibulum imperdiet odio sed neque ultricies, ut
+                          dapibus mi maximus. Proin ligula massa, gravida in
+                          lacinia efficitur, hendrerit eget mauris. Pellentesque
+                          fermentum, sem interdum molestie finibus, nulla diam
+                          varius leo, nec varius lectus elit id dolor.
+                        </div>
                       </div>
                     </div>
                   </div>
-                  <SaveCancelButtons />
                 </div>
               </div>
-            <div class="col-4 col-sm-4 col-lg-4">
-              
-                 
+              <div className="row">
+                <div className="col-12 col-md-6 col-lg-6">
                   <div className="card">
-                <div className="card-header">
-                  <h4>Expense List</h4>
+                    <div className="card-header">
+                      <h4>Expense List</h4>
+                    </div>
+                    <div className="card-body">
+                      <table className="table table-sm">
+                        <thead>
+                          <tr>
+                            <th scope="col">Expense</th>
+                            <th scope="col">Per</th>
+                            <th scope="col">Amount</th>
+
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <th scope="row">Gross</th>
+                            <td>0</td>
+                            <td>5000</td>
+
+
+                          </tr>
+                          <tr>
+                            <th scope="row">Discount</th>
+                            <td>10</td>
+                            <td>500</td>
+
+                          </tr>
+                          <tr>
+                            <th scope="row">Net Amount</th>
+                            <td>0</td>
+                            <td>4500</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                      {/* <div className="section-title">Dark</div> */}
+                    </div>
+                  </div>
+
                 </div>
-                <div className="card-body">
-                  <table className="table table-sm">
-                    <thead>
-                      <tr>
-                        <th scope="col">Expense</th>
-                        <th scope="col">Per</th>
-                        <th scope="col">Amount</th>
-                    
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row">Gross</th>
-                        <td>0</td>
-                        <td>5000</td>
-                      
-                     
-                      </tr>
-                      <tr>
-                        <th scope="row">Discount</th>
-                        <td>10</td>
-                        <td>500</td>
-                   
-                      </tr>
-                      <tr>
-                        <th scope="row">Net Amount</th>
-                        <td>0</td>
-                        <td>4500</td>
-                      </tr>
-                    </tbody>
-                  </table>
-                  {/* <div className="section-title">Dark</div> */}
-                </div>
-              </div> 
-          
-            </div>
+              </div>
+
+              <SaveCancelButtons />
             </div>
           </div>
         </div>
-      </div>
-    </form>
+      </form>
+    </div>
   );
 }
 

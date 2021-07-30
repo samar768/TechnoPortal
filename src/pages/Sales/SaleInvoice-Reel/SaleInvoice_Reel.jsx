@@ -2,7 +2,9 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { CalendarInput, PageHeading } from './../../../Common/Component/General/index'
 import format from 'date-fns/format';
-
+import {
+  TextInput,
+} from "../../../Common/Component/General/index.js";
 
 export const SaleInvoice_Reel = (props) => {
 
@@ -10,42 +12,87 @@ export const SaleInvoice_Reel = (props) => {
     console.log('date changed has called');
   }
   return (
-    <div className="main-content">
-      <div id="app">
-        <section className="section">
-          <PageHeading PageHeading="Sale Invoice" />
-          <div id="divmain" className="col-6 col-md-6 col-lg-12">
-            <div className="card">
-              <div className="row">
-                <div className="col-12" >
-                  <div className="card card-primary">
-                    <div className="card-body">
-                      <div className="row">
+    <div>
+			<div className='main-content' id='divBCCover'>
+				<section className='section'>
+					<div className='row'>
+          <div className="col-12 col-md-12 col-lg-12">
+          <div className="card"  >
+          <div>
+						<div className="row">
+                <TextInput
+                                    inputId='TxtType'
+                                    labelDescription="Voucher Type"
+                                    inputSizes={["col-12 col-md-6 col-lg-6"]}
+                                    isDisabled={false}
+                                    isMandatory={true}
+                                    isValid={true}
+                                    validationMessage=""
+                                   
+                                  />
+						
+						
+                <TextInput
+                                    inputId='TxtType'
+                                    labelDescription="Voucher Type"
+                                    inputSizes={["col-12 col-md-6 col-lg-6"]}
+                                    isDisabled={false}
+                                    isMandatory={true}
+                                    isValid={true}
+                                    validationMessage=""
+                                   
+                                  />
+                                  </div>
+                                  <div className="row">
+                <TextInput
+                                    inputId='TxtType'
+                                    labelDescription="Name"
+                                    inputSizes={["col-12 col-md-6 col-lg-6"]}
+                                    isDisabled={false}
+                                    isMandatory={true}
+                                    isValid={true}
+                                    validationMessage=""
+                                   
+                                  />
+						
+						
+                <TextInput
+                                    inputId='TxtType'
+                                    labelDescription="Last name"
+                                    inputSizes={["col-12 col-md-6 col-lg-6"]}
+                                    isDisabled={false}
+                                    isMandatory={true}
+                                    isValid={true}
+                                    validationMessage=""
+                                   
+                                  />
+                                  
+                                  <TextInput
+                                    inputId='TxtType'
+                                    labelDescription="Last name"
+                                    inputSizes={["col-12 col-md-6 col-lg-8"]}
+                                    isDisabled={false}
+                                    isMandatory={true}
+                                    isValid={true}
+                                    validationMessage=""
+                                   
+                                  />
+                                  
 
-                        <div className="form-group col-12">
-                            <CalendarInput
-                              inputId='V_Date'
-                              labelDescription='Voucher Date'
-                              inputSizes={['col-6', 'col-sm-6', 'col-md-6', 'col-lg-4']}
-                              isMandatory={false}
-                              handleOnChange={() => false}
-                              value={'01-01-2022'}
-                              isValid={true}
-                              validationMessage=''
-                              isLoading={true}
-                              isDisabled={true}
-                            />
-                            </div>
-                          </div>
-                    </div>
-                  </div>
-                </div>
+                                  </div>
+                                  <div className="row">
+                                  
+          
+          
               </div>
-            </div>
+            </div>                       
+              </div>
+              </div>
+         </div>
+            
+          </section>
           </div>
-        </section>
-      </div>
-    </div>
+          </div>
 
   )
 }

@@ -27,7 +27,7 @@ const TextInput = (props) => (
 						type='text'
 						name={props.inputId}
 						// className={`form-control ${props.isValid === false ? 'is-invalid' : ''} ${props.isMandatory ? 'is-required-field' : ''}`}
-						className={`form-control ${props.isValid === false ? 'is-invalid' : ''} ${props.isMandatory ? 'is-required-field' : ''}`}
+						className={`form-control input-sm ${props.isValid === false ? 'is-invalid' : ''} ${props.isMandatory ? 'is-required-field' : ''}`}
 						id={props.inputId}
 						disabled={IS_VIEW_MODE || props.isDisabled}
 						value={props.value}
