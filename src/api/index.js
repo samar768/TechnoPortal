@@ -10,3 +10,4 @@ export const fetchFilteredList = (list_type, filter) => axios.get(`${urlLists}/l
 export const processLogic = (params) => axios.post(urlLogic, params);
 
 export const validateLogin = (credentials) => axios.post(urlLogin, credentials);
+

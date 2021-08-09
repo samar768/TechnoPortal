@@ -13,86 +13,82 @@ export const SaleInvoice_Reel = (props) => {
   }
   return (
     <div>
-			<div className='main-content' id='divBCCover'>
-				<section className='section'>
-					<div className='row'>
-          <div className="col-12 col-md-12 col-lg-12">
-          <div className="card"  >
-          <div>
-						<div className="row">
-                <TextInput
-                                    inputId='TxtType'
-                                    labelDescription="Voucher Type"
-                                    inputSizes={["col-12 col-md-6 col-lg-6"]}
-                                    isDisabled={false}
-                                    isMandatory={true}
-                                    isValid={true}
-                                    validationMessage=""
-                                   
-                                  />
-						
-						
-                <TextInput
-                                    inputId='TxtType'
-                                    labelDescription="Voucher Type"
-                                    inputSizes={["col-12 col-md-6 col-lg-6"]}
-                                    isDisabled={false}
-                                    isMandatory={true}
-                                    isValid={true}
-                                    validationMessage=""
-                                   
-                                  />
-                                  </div>
-                                  <div className="row">
-                <TextInput
-                                    inputId='TxtType'
-                                    labelDescription="Name"
-                                    inputSizes={["col-12 col-md-6 col-lg-6"]}
-                                    isDisabled={false}
-                                    isMandatory={true}
-                                    isValid={true}
-                                    validationMessage=""
-                                   
-                                  />
-						
-						
-                <TextInput
-                                    inputId='TxtType'
-                                    labelDescription="Last name"
-                                    inputSizes={["col-12 col-md-6 col-lg-6"]}
-                                    isDisabled={false}
-                                    isMandatory={true}
-                                    isValid={true}
-                                    validationMessage=""
-                                   
-                                  />
-                                  
-                                  <TextInput
-                                    inputId='TxtType'
-                                    labelDescription="Last name"
-                                    inputSizes={["col-12 col-md-6 col-lg-8"]}
-                                    isDisabled={false}
-                                    isMandatory={true}
-                                    isValid={true}
-                                    validationMessage=""
-                                   
-                                  />
-                                  
+      <div className='main-content' id='divBCCover'>
+        <section className='section'>
+          <div className='row'>
+            <div className="col-12 col-md-12 col-lg-12">
+              <div className="card"  >
+                <div>
+                  <div className="row">
+                    <TextInput
+                      inputId='TxtType'
+                      labelDescription="Voucher Type"
+                      inputSizes={["col-12 col-md-6 col-lg-6"]}
+                      isDisabled={false}
+                      isMandatory={true}
+                      isValid={true}
+                      validationMessage=""
 
-                                  </div>
-                                  <div className="row">
-                                  
-          
-          
+                    />
+                    <TextInput
+                      inputId='TxtType'
+                      labelDescription="Voucher Type"
+                      inputSizes={["col-12 col-md-6 col-lg-6"]}
+                      isDisabled={false}
+                      isMandatory={true}
+                      isValid={true}
+                      validationMessage=""
+
+                    />
+                  </div>
+                  <div className="row">
+                    <TextInput
+                      inputId='TxtType'
+                      labelDescription="Name"
+                      inputSizes={["col-12 col-md-6 col-lg-6"]}
+                      isDisabled={false}
+                      isMandatory={true}
+                      isValid={true}
+                      validationMessage=""
+
+                    />
+                    <TextInput
+                      inputId='TxtType'
+                      labelDescription="Last name"
+                      inputSizes={["col-12 col-md-6 col-lg-6"]}
+                      isDisabled={false}
+                      isMandatory={true}
+                      isValid={true}
+                      validationMessage=""
+
+                    />
+
+                    <TextInput
+                      inputId='TxtType'
+                      labelDescription="Last name"
+                      inputSizes={["col-12 col-md-6 col-lg-8"]}
+                      isDisabled={false}
+                      isMandatory={true}
+                      isValid={true}
+                      validationMessage=""
+
+                    />
+
+
+                  </div>
+                  <div className="row">
+
+
+
+                  </div>
+                </div>
               </div>
-            </div>                       
-              </div>
-              </div>
-         </div>
-            
-          </section>
+            </div>
           </div>
-          </div>
+
+        </section>
+      </div>
+    </div>
 
   )
 }

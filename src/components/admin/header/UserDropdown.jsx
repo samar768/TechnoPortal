@@ -2,6 +2,9 @@ import React, { Component } from "react";
 import { NavLink } from "react-router-dom";
 
 export class UserDropdown extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     const { userDetail } = this.props;
     return (
@@ -45,11 +48,7 @@ export class UserDropdown extends Component {
           <a
             href="#"
             className="dropdown-item has-icon text-danger"
-            // onClick={() => {
-            //   Auth.logout(() => {
-            //     window.location.reload();
-            //   });
-            // }}
+            onClick={this.props.logout}
           >
             <i className={userDetail.logoutIcon} /> {userDetail.logoutTitle}
           </a>

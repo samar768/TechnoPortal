@@ -7,10 +7,7 @@ import { ITEM} from '../../Common/OrderContstant/order';
 
 // declare initial state
 const INITIAL_STATE = {
-  'items': {},
-    TYPE:'SORD',
-    PARTY:'SAMAR'
-  
+  'items': {}
 };
 
 export default (state = INITIAL_STATE, action) => {

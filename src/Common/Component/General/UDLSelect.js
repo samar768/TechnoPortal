@@ -10,16 +10,18 @@ import {
 	Numeral
 } from './index';
 
+
 // select control
 const UDLSelect = (props) => {
 	// retrieve and sort the udl the udl
 	let udlList = getUDLList(props.udlListName, props.udlListType);
+
 	// udlList = udlList.sort((a, b) => a.Description.localeCompare(b.Description));
 
 	// renders the select control
 	const renderSelect = (udlList, defaultPleaseSelect, defaultValue, exclusionList) => {
 		// display default if no list has been loaded yet
-		if (udlList.length === 0)
+		if (udlList.jsonData.length === 0)
 			return <option key="0" value="">Loading...</option>
 		else {
 			// define option list to return
@@ -37,18 +39,18 @@ const UDLSelect = (props) => {
 				selectOptionList.push(<option key='-1' value=''>Please select a value...</option>)
 
 			// sort the list, if applicable
-			if (typeof props.orderListBy !== 'undefined' & props.orderListBy !== '') {
-				if (props.orderListBy === 'value') {
-					udlList.sort((a, b) => (parseInt(a.Code) > parseInt(b.Code)) ? 1 : ((parseInt(b.Code) > parseInt(a.Code) ? -1 : 0)))
-				}
-			}
+			// if (typeof props.orderListBy !== 'undefined' & props.orderListBy !== '') {
+			// 	if (props.orderListBy === 'Code') {
+			// 		udlList.sort((a, b) => (parseInt(a.Description) > parseInt(b.Description)) ? 1 : ((parseInt(b.Description) > parseInt(a.Description) ? -1 : 0)))
+			// 	}
+			// }
 
 			// map through each udl item
-			udlList.map((udlItem) => {
-				if (udlItem.IsDeleted == false) {
-					if (!exclusionListEntries.includes(udlItem.Key.toString())) {
+			udlList.jsonData.map((udlItem) => {
+				if (udlItem.code) {
+					if (!exclusionListEntries.includes(udlItem.code.toString())) {
 						// initialise variables
-						let value = udlItem.Description;
+						let value = udlItem.description;
 
 						// format description, if applicable
 						if (props.formatValueAsCurrency) {
@@ -57,7 +59,7 @@ const UDLSelect = (props) => {
 
 						switch (listType) {
 							case 'pmlookup': {
-								selectOptionList.push(<option key={udlItem.Key} value={udlItem.Code}>{value}</option>)
+								selectOptionList.push(<option key={udlItem.code} value={udlItem.code}>{value}</option>)
 								break;
 							}
 							case 'userdefined': {
@@ -97,7 +99,7 @@ const UDLSelect = (props) => {
 							className={`form-control ${props.isValid === false ? 'is-invalid' : ''} ${props.isMandatory ? 'is-required-field' : ''}`}
 							onChange={props.isViewOnly ? false : props.handleOnChange}
 							disabled={IS_VIEW_MODE || props.isDisabled || props.isViewOnly}
-							value={props.defaultValue}
+						    value={props.defaultValue}
 						>
 							{renderSelect(udlList, props.defaultPleaseSelect, props.defaultValue, props.exclusionList)}
 						</select>

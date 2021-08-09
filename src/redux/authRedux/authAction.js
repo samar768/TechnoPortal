@@ -1,7 +1,7 @@
 import { LOGIN, LOGOUT } from './authTypes';
 
 import { validateLogin } from '../../api';
-import history from '../../components/history';
+import history from '../../pages/Authentication/history';
 
 export const login = (credentials) => async (dispatch) => {
   var cred = JSON.stringify(credentials);
@@ -11,6 +11,8 @@ export const login = (credentials) => async (dispatch) => {
     type: LOGIN,
     payload: user.data
   });
+  
+  history.push('/');
 };
 
 export const logout = () => async (dispatch) => {
@@ -18,5 +20,5 @@ export const logout = () => async (dispatch) => {
     type: LOGOUT
   });
 
-  history.push('/login');
+   history.push('/login');
 };

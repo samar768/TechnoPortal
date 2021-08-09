@@ -47,6 +47,7 @@ import {
   SaveCancelButtons,
   CalendarInput,
   TextInput,
+  UDLSelect,
 } from "../../../Common/Component/General/index.js";
 import format from "date-fns/format";
 import { HEADER_TABLE } from "../../../Common/OrderContstant/order.js";
@@ -164,17 +165,25 @@ function OrderHeader(props) {
                                   <div className="card-body">
                                     {/* Voucher type Row */}
                                     <div className="row">
-                                      <TextInput
-                                        inputId={TYPE}
-                                        labelDescription="Voucher Type"
-                                        inputSizes={["col-sm-12 col-md-4 col-lg-4"]}
-                                        isDisabled={false}
-                                        isMandatory={true}
-                                        value={get(props.orderData, TYPE, "")}
-                                        isValid={true}
-                                        validationMessage=""
-                                        handleOnChange={(event) => handleStateUpdates([{ Key: TYPE, Value: event.target.value }])}
-                                      />
+                                    <UDLSelect
+                                      udlListName='VOUCHERTYPE'
+                                      udlListType='VOUCHERTYPE'
+                                      selectId={TYPE}
+                                      selectSizes={['col-sm-12 col-md-4 col-lg-4']}
+                                      defaultPleaseSelect={true}
+                                      defaultValue={get(props.orderData, TYPE, "")}
+                                      value={get(props.orderData, TYPE, "")}
+                                      handleOnChange={(event) => handleStateUpdates([{ Key: TYPE, Value: event.target.value }], false, true, false)}
+                                      labelDescription='VoucherType'
+                                      isDisabled={false}
+                                      isMandatory={true}
+                                      isValid={true}
+                                     // validationMessage={'Please select voucher type'}
+                                      isLoading={false}
+                                      exclusionList={[]}
+                                      orderListBy='Code'
+                                    />
+
                                       <TextInput
                                         inputId={PARTY}
                                         labelDescription="Party Order No"
