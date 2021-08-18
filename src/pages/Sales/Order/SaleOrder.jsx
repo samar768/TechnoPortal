@@ -6,6 +6,8 @@ import * as jQuery from "jquery"
 import Cleave from "cleave.js";
 import {UDLSelect,CalendarInput} from '../../../Common/Component/General/index.js';
 import OrderHeader from './OrderHeader';
+import OrderItemdetails from './OrderItemdetails';
+import ExpenseHeaderControl from './ExpenseHeaderControl';
 /* eslint-disable array-callback-return */
 import {Promise} from "bluebird";
 import PropTypes from 'prop-types';
@@ -23,6 +25,9 @@ import {
 import {
   stateChange
 } from './OrderLogic';
+import {
+  SaveCancelButtons,
+} from "../../../Common/Component/General/index.js";
 
 
 export class SaleOrderPage extends Component {
@@ -78,15 +83,32 @@ export class SaleOrderPage extends Component {
   render() {
   return (
     <>
-    <OrderHeader 
-
+      <div className="form-group">
+      <form >
+        <div className="main-content">
+          <div id="app">
+            <section className="section">
+              <div className="section-header">
+                <h1>Sale Order</h1>
+              </div>
+            </section>
+            <div className="section-body"></div>
+    
+           <OrderHeader 
               orderData={ this.props.orderData}
               getList={this.props.getList}
               listData={this.props.listData}
               getFilteredList={this.props.getFilteredList}
               handleStateUpdate={this.HandleStateUpdate}
              /> 
-    </>
+             <OrderItemdetails/>
+            {/* <ExpenseHeaderControl/>
+             <SaveCancelButtons/> */}
+             </div>
+          </div>
+      </form>
+    </div>
+   </>
   );
   }
 }

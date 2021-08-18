@@ -5,6 +5,7 @@ import format from 'date-fns/format';
 import {
   TextInput,
 } from "../../../Common/Component/General/index.js";
+import { Dropdown } from 'react-bootstrap';
 
 export const SaleInvoice_Reel = (props) => {
 
@@ -20,6 +21,22 @@ export const SaleInvoice_Reel = (props) => {
               <div className="card"  >
                 <div>
                   <div className="row">
+
+                  <div className="dropdown">
+        <Dropdown>
+        <Dropdown.Toggle 
+        variant="secondary btn-sm" 
+        id="dropdown-basic">
+            Language
+        </Dropdown.Toggle>
+
+        <Dropdown.Menu style={{backgroundColor:'#73a47'}}>
+            <Dropdown.Item href="#" >Arabic</Dropdown.Item>
+            <Dropdown.Item href="#">English</Dropdown.Item>
+        </Dropdown.Menu>
+        </Dropdown>
+</div>
+
                     <TextInput
                       inputId='TxtType'
                       labelDescription="Voucher Type"

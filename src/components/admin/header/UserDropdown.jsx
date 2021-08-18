@@ -45,13 +45,26 @@ export class UserDropdown extends Component {
           })}
 
           <div className="dropdown-divider" />
-          <a
+          {/* <a
             href="#"
             className="dropdown-item has-icon text-danger"
             onClick={this.props.logout}
           >
             <i className={userDetail.logoutIcon} /> {userDetail.logoutTitle}
-          </a>
+          </a> */}
+           <NavLink
+                key='logout'
+                // to="/feature/profile"
+                // to= "./../../../pages/Authentication/Login.jsx"
+                 to="/auth/login"
+                activeStyle={{
+                  color: "#6777ef",
+                }}
+                exact
+                className="dropdown-item has-icon text-danger"
+              >
+                 <i className={userDetail.logoutIcon} /> {userDetail.logoutTitle}
+              </NavLink>
         </div>
       </li>
     );

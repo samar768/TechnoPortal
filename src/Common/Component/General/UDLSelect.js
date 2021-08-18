@@ -99,7 +99,7 @@ const UDLSelect = (props) => {
 							className={`form-control ${props.isValid === false ? 'is-invalid' : ''} ${props.isMandatory ? 'is-required-field' : ''}`}
 							onChange={props.isViewOnly ? false : props.handleOnChange}
 							disabled={IS_VIEW_MODE || props.isDisabled || props.isViewOnly}
-						    value={props.defaultValue}
+						    defaultValue={`SORD`}
 						>
 							{renderSelect(udlList, props.defaultPleaseSelect, props.defaultValue, props.exclusionList)}
 						</select>

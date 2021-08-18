@@ -136,6 +136,7 @@ const history = React.lazy(() => import('./history'));
 // =================================Start Sale Modules======================================
 const SaleOrder = React.lazy(() => import('./pages/Sales/Order/SaleOrder'));
 const SaleInvoice = React.lazy(() => import('./pages/Sales/SaleInvoice-Reel/SaleInvoice_Reel.jsx'));
+const SaleOrderListings = React.lazy(() => import('./pages/Sales/Order/OrderListing.jsx'));
 // =================================End Sale Modules========================================
 
 
@@ -203,7 +204,7 @@ function App(props) {
           <React.Suspense fallback={<h1>Still Loading…</h1>}>
             <Switch history={history}>
               {/* <Route path="/" exact component={Login} /> */}
-              {/* <Route path="/" exact component={EcommerceDashboard} /> */}
+              <Route path="/dashboard/EcommerceDashboard"  component={EcommerceDashboard} />
               <Route path="/dashboard/general" component={GeneralDashboard} />
               <Route path="/layout/default" component={DefaultLayoutPage} />
               <Route
@@ -307,7 +308,13 @@ function App(props) {
                   />
                 )}
               />
-
+               <Route
+                path="/sales/orderListings"
+                render={(props) => (
+                  <SaleOrderListings {...props}
+                  />
+                )}
+              />
               <Route
                 path="/sales/saleInvoice-Reel"
                 render={(props) => (

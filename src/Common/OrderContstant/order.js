@@ -1,3 +1,5 @@
+import { stubTrue } from "lodash";
+
 export const TYPE = 'TxtType';
 export const PARTY = 'TxtParty';
 export const PARTY_ORDER_NO = 'TxtPOrdNo';
@@ -18,26 +20,26 @@ export const V_NO = 'TxtVNo';
 export const DOC_ID = 'StrDocID';
 export const DISTRIBUTOR = 'TxtDistributor';
 
-export const HEADER_TABLE={
-     TYPE : 'TxtType',
-     PARTY : 'TxtParty',
-     PARTY_ORDER_NO : 'TxtPOrdNo',
-     PARTY_ORDER_DATE : 'TxtPtyOrdDate',
-     ORDER_NO : 'TxtRecId',
-     ORDER_DATE : 'TxtOrdDate',
-     AGAINST_FORM : 'TxtAgtForm',
-     EXCISABLE : 'TxtExcisable',
-     ORDER_TYPE : 'TxtOrderType',
-     DELIVERY_TO : 'TxtDeliveryAt',
-     DELIVERY_DATE : 'TxtDeliveryDate',
-     AMENDMENT_ORDER_NO : 'TxtAmdOrderNo',
-     CONSIGNEE : 'TxtConsignee',
-     SALES_TYPE : 'TxtSaleV_type',
-     TO_PLACE : 'TxtToPlace',
-     CONTRACTUAL_ORDER_REF : 'TxtContratualOrdRef',
-     V_NO : 'TxtVNo',
-     DOC_ID : 'StrDocID',
-     DISTRIBUTOR : 'TxtDistributor'
+export const HEADER_TABLE = {
+  TYPE: 'TxtType',
+  PARTY: 'TxtParty',
+  PARTY_ORDER_NO: 'TxtPOrdNo',
+  PARTY_ORDER_DATE: 'TxtPtyOrdDate',
+  ORDER_NO: 'TxtRecId',
+  ORDER_DATE: 'TxtOrdDate',
+  AGAINST_FORM: 'TxtAgtForm',
+  EXCISABLE: 'TxtExcisable',
+  ORDER_TYPE: 'TxtOrderType',
+  DELIVERY_TO: 'TxtDeliveryAt',
+  DELIVERY_DATE: 'TxtDeliveryDate',
+  AMENDMENT_ORDER_NO: 'TxtAmdOrderNo',
+  CONSIGNEE: 'TxtConsignee',
+  SALES_TYPE: 'TxtSaleV_type',
+  TO_PLACE: 'TxtToPlace',
+  CONTRACTUAL_ORDER_REF: 'TxtContratualOrdRef',
+  V_NO: 'TxtVNo',
+  DOC_ID: 'StrDocID',
+  DISTRIBUTOR: 'TxtDistributor'
 };
 
 export const ITEM = {
@@ -69,7 +71,7 @@ export const ITEM = {
   ITEM_ADJ_REEL: 'ItemAdjReel',
   ITEM_ADJ_WEIGHT: 'ItemAdjWeight',
 };
- 
+
 // export const s = 'ItemDesc';
 // export const s = 'SizeReel';
 // export const s = 'SizeHeight';
@@ -96,7 +98,7 @@ export const ORDER_TABLE = {
     BF: 'BF',
     BFName: 'BFName',
     SizeReel: 'SizeReel',
-    SizeHeight:'SizeHeight',
+    SizeHeight: 'SizeHeight',
     SizeUnit: 'SizeUnit',
     Grain: 'Grain',
     GSM: 'GSM',
@@ -293,3 +295,122 @@ export const ORDER_TABLE = {
     event: 'removeItem',
   },
 };
+
+export const OrderHeaderFieldSchema =
+{
+  PARTY_ORDER_NO: {
+    key: "TxtPOrdNo",
+    label: "Party Order No",
+    IsRequired: true,
+    maxLength:35
+  },
+  PARTY_ORDER_DATE: {
+    key: "TxtPtyOrdDate",
+    label: "Party Order Date",
+    IsRequired: true
+  },
+  TYPE: {
+    key: "TxtType",
+    label: "Voucher Type",
+    IsRequired: true,
+    masterName:"VOUCHERTYPE",
+    masterType:"VOUCHERTYPE"
+
+
+  },
+  ORDER_NO: {
+    key: "TxtOrderNo",
+    label: "Order No.",
+    IsRequired: true,
+    maxLength:10
+
+  },
+  ORDER_DATE:
+  {
+    key: "TxtVDate",
+    label: "Order Date",
+    IsRequired: true
+
+  },
+  AGAINST_FORM:
+  {
+    key: "TxtAgtForm",
+    label: "Against Form",
+    IsRequired: false,
+    masterName:"AGAINSTFORM",
+    masterType:"AGAINSTFORM"
+
+  },
+  EXCISABLE: {
+    key: "TxtExcisable",
+    label: "Excisable",
+    IsRequired: false
+  },
+  PARTY:
+  {
+    key: "TxtParty",
+    label: "Party Name",
+    IsRequired: true,
+    masterName:"PARTY",
+    masterType:"PARTY"
+  },
+  DELIVERY_TO:
+  {
+    key: "TxtDeliveryAt",
+    label: "Delivery To",
+    IsRequired: true,
+    masterName:"PARTY",
+    masterType:"PARTY"
+
+  },
+  DISTRIBUTOR: {
+    key: "TxtDistributor",
+    label: "Distributor",
+    IsRequired: true
+
+  },
+  DELIVERY_DATE: {
+    key: "TxtDeliveryDate",
+    label: "Delivery Date",
+    IsRequired: false
+
+  },
+  ORDER_TYPE:
+  {
+    key: "TxtPapertype",
+    label: "Paper Type",
+    IsRequired: true,
+    masterName:"ORDERTYPE",
+    masterType:"ORDERTYPE"
+,
+
+  },
+  AMENDMENT_ORDER_NO: {
+    key: "TxtAmdOrderNo",
+    label: "Amendment Ord No.",
+    IsRequired: true
+
+  },
+  CONTRACTUAL_ORDER_REF: {
+    key: "TxtContratualOrdRef",
+    label: "Contractual Ref." ,
+    IsRequired: true
+  },
+  CONSIGNEE: {
+    key: "TxtConsignee",
+    label: "Consignee",
+    IsRequired: true,
+    masterName:"PARTY",
+    masterType:"PARTY"
+
+  },
+  TO_PLACE: {
+    key: "TxtToPlace",
+    label: "To Place",
+    IsRequired: true,
+    masterName:"CITY",
+    masterType:"CITY"
+  }
+
+}
+  ;

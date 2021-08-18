@@ -11,7 +11,7 @@ export const Data = {
             icon: 'fas fa-fire',
             children: [{
                     name: 'Ecommerce Dashboard',
-                    url: '/',
+                    url: '/dashboard/EcommerceDashboard',
                     // active: true
                 },
                 {
@@ -42,6 +42,11 @@ export const Data = {
 
                     name: 'Work Order',
                     url: '/layout/top-navigation'
+                },
+                {
+
+                    name: 'Order Listing',
+                    url: '/sales/orderListings'
                 }
 
             ]

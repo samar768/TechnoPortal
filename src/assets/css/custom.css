@@ -6,3 +6,39 @@
  */
 
 /*# sourceMappingURL=custom.css.map */
+.form-control.is-required-field {
+    border-left: 1px solid #e40808;
+}
+
+/* Child Control */
+.center-align {
+    text-align: center;
+}
+
+.child-table th, .child-table td {
+    vertical-align: middle;
+
+}
+
+.child-table th {
+    font-size: 12px;
+    background-color: #444b85;
+     /* #6777ef; */
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 2px 0 -2px 0;
+    font-family: 'Montserrat';
+    line-height: 08px;
+    border: 1px solid #ededed;
+    /* background: rgba(87,75,144, 0.9); */
+    color: white;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.child-table td {
+    font-size: 11px;
+}

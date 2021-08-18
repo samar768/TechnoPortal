@@ -73,27 +73,120 @@ const GetUDLList = (udlListName, udlListType) => {
 					console.log(Staticdata);
 					
 				
-					setUdl(Staticdata);
+					setUdl(response);
 					break;
 			}
 			case 'AGAINSTFORM': {
+
+				const response =
+				{
+				"jsonData":  [
+                    {  'code': 'HO1',  'description': 'CST 2 % agt Form C', Tax_Per: 2 },
+                    {  'code': 'HO2',  'description': 'CST 5% W/o Form', Tax_Per: 5 },
+                    {  'code': 'HO6',  'description': 'Exportable sales', Tax_Per: 0 },
+                    {  'code': 'HO5',  'description': 'Form H agt Export', Tax_Per: 0 },
+                    {  'code': 'HO17',  'description': 'IGST-SLES', Tax_Per: 12 },
+                    {  'code': 'HO18',  'description': 'LGST-SALES', Tax_Per: 6 },
+                    {  'code': 'HO7',  'description': 'VAT 0 % agt Home Consumpt', Tax_Per: 0 },
+                    {  'code': 'HO4',  'description': 'VAT 2 % agt Form', Tax_Per: 2 },
+                    {  'code': 'HO14',  'description': 'VAT 6 % W/o Form', Tax_Per: 6 },
+                    {  'code': 'HO3',  'description': 'VAT 5 % W/o Form', Tax_Per: 5 },
+                ]
+			}
 			
+				setUdl(response);
 				break;
 			}
 
-			case 'PARTYNAME': {
-			
+			case 'PARTY': {
+
+				 const response =
+				 {
+				 "jsonData":  [
+                    {
+                        'code': 'HO67',
+                        'description': 'A.R. ENTERPRISE',
+                    }, {
+                       'code': 'HO348',
+                        'description': 'ABHIJIT PACKAGING',
+                      
+                    }, {
+                        'code': 'HO44',
+                        'description': 'ADITYA PACKAGING INDUSTRIES',
+                      
+                    }, {
+                        'code': 'HO47',
+                        'description': 'BADITYA PACKAGING INDUSTRIES',
+                        
+                    },
+                    { 
+						'code': 'HO323', 
+						'description': 'BANGKOR PULP AND PAPER CORPORATIO', 
+				      },
+                   
+                ]
+			}
+
+				setUdl(response);
 				break;
 			}
 
 			case 'ORDERTYPE': {
 			
-				break;
+				const response =
+				{
+				"jsonData":  [
+				   {
+					   'code': 'S',
+					   'description': 'Sheet',
+				   }, {
+					  'code': 'P',
+					   'description': 'Paper',
+					 
+				   }, {
+					   'code': 'O',
+					   'description': 'Other',
+					 
+				   }
+			   ]
+		   }
+
+			   setUdl(response);
+			   break;
 			}
 
-			case 'PLACE': {
+			case 'CITY': {
 			
-				break;
+				const response =
+				{
+				"jsonData":  [
+				    { 'code': 'HO75', 'description': '24 PGS (NORTH)', State: 'HO36' },
+                    { 'code': 'HO12', 'description': '24 Pgs.(S)', State: '' },
+                    { 'code': 'HO16', 'description': '9th Mile', State: '' },
+                    { 'code': 'HO23', 'description': 'ADHERI EAST', State: 'HO22' },
+                    { 'code': 'HO76', 'description': 'Agartala', State: 'HO34' },
+                    { 'code': 'HO64', 'description': 'Aligarh', State: '' },
+                    { 'code': 'HO40', 'description': 'ALLAHABAD', State: 'HO35' },
+                    { 'code': 'HO87', 'description': 'ARAMBAGH', State: 'HO36' },
+                    { 'code': 'HO88', 'description': 'ASANSOL', State: 'HO36' },
+                    { 'code': 'HO38', 'description': 'AZARA', State: '' },
+                    { 'code': 'HO7', 'description': 'Baddi', State: '' },
+                    { 'code': 'HO4', 'description': 'BALICHAK', State: 'HO36' },
+                    { 'code': 'HO94', 'description': 'BANHOOGHLY', State: 'HO36' },
+                    { 'code': 'HO89', 'description': 'BARASAT', State: 'HO36' },
+                    { 'code': 'HO97', 'description': 'BELIAGHATA', State: 'HO36' },
+                    { 'code': 'HO14', 'description': 'Birbhum', State: 'HO36' },
+                    { 'code': 'HO52', 'description': 'Bolagar', State: 'HO36' },
+                    { 'code': 'HO45', 'description': 'BORKA ROAD,CHANGSARI', State: '' },
+                    { 'code': 'HO42', 'description': 'BURDWAN', State: 'HO36' },
+                    { 'code': 'HO79', 'description': 'Cachar', State: 'HO5' },
+                    { 'code': 'HO49', 'description': 'Changsari', State: 'HO5' },
+                    { 'code': 'HO33', 'description': 'Chayygaon', State: 'HO5' },
+			   ]
+		   }
+
+			   setUdl(response);
+			   break;
 			}
 			
 			default:

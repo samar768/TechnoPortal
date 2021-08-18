@@ -7,13 +7,17 @@ import {
 import {
 	ComponentLoader
 } from './index';
-
+import  '../../../assets/css/custom.css';
+	
 // custom numeric formatter
 const TextInput = (props) => (
+
 	<div className={'form-group ' + props.inputSizes.join(' ')}>
+	
 		{props.labelDescription === '' ?
 			'' :
 			<label htmlFor={props.inputId}>{props.labelDescription}</label>
+		
 		}
 		{props.isLoading ?
 			(
@@ -26,7 +30,6 @@ const TextInput = (props) => (
 					<input
 						type='text'
 						name={props.inputId}
-						// className={`form-control ${props.isValid === false ? 'is-invalid' : ''} ${props.isMandatory ? 'is-required-field' : ''}`}
 						className={`form-control input-sm ${props.isValid === false ? 'is-invalid' : ''} ${props.isMandatory ? 'is-required-field' : ''}`}
 						id={props.inputId}
 						disabled={IS_VIEW_MODE || props.isDisabled}
@@ -35,6 +38,7 @@ const TextInput = (props) => (
 						onChange={props.handleOnChange}
 						onBlur={props.handleOnBlur}
 						key={props.inputId}
+						maxLength={props.maxLength} 
 					/>
 					<div className="invalid-feedback">
 						{props.validationMessage || ''}

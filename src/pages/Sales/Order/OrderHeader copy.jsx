@@ -24,6 +24,7 @@ import {
   GRAIN_LIST,
   GSM_LIST,
 } from "../../../Common/OrderContstant/list";
+
 import {
    CalendarInput,
   TextInput,
@@ -78,21 +79,34 @@ function OrderHeader(props) {
     props.handleStateUpdate(keyValueArray);
   };
 
+  // const handleOnDateChange = (event) => {
+  //   let keyValueArray = [
+  //     {
+  //       Key: event.target.name,
+  //       Value:
+  //         event.target.value === ""
+  //           ? format(new Date(), "yyyy-MM-dd 00:00:00")
+  //           : format(event.target.value, "yyyy-MM-dd 00:00:00"),
+  //     },
+  //   ];
+  //   props.handleStateUpdate(keyValueArray);
+  // };
+
   const onFormSubmit = (e) => {
     e.preventDefault();
     console.log("Form has been submit");
   };
 
   return (
-    // <div className="form-group">
-    //   <form onSubmit={onFormSubmit}>
-    //     <div className="main-content">
-    //       <div id="app">
-    //         <section className="section">
-    //           <div className="section-header">
-    //             <h1>Sale Order</h1>
-    //           </div>
-    //         </section>
+    <div className="form-group">
+      <form onSubmit={onFormSubmit}>
+        <div className="main-content">
+          <div id="app">
+            <section className="section">
+              <div className="section-header">
+                <h1>Sale Order</h1>
+              </div>
+            </section>
             <div className="section-body">
               <div className="row">
                 <div className="col-12 col-md-12 col-lg-12">
@@ -626,11 +640,12 @@ function OrderHeader(props) {
                   </div>
                 </div>
               </div>
+                           
             </div>
-          /* </div>
+          </div>
         </div>
       </form>
-    </div> */
+    </div>
   );
 }
 
