@@ -11,21 +11,21 @@ import sum from 'lodash/sum';
 import map from 'lodash/map';
 import {Numeral} from '../General';
 import {
-	GET_UDL_HANDLER_METHOD_NAME,
-	RISK_HANDLER_URL
-} from '../../constants';
-import {
 	getResultFromServer
 } from '../../api/apiManager';
+
+const RISK_HANDLER_URL="";
+const GET_UDL_HANDLER_METHOD_NAME="";
 
 // generates a table component
 class Table extends React.PureComponent {
 	// default state
 	state = {
-		isLoading: true,
+		isLoading: false,
 		tableUdlCodes: [],
 		tableUdls: []
 	};
+
 
 	// retrieves all the UDL lists for the table (if applicable)
 	getAllUdlValues = async () => {
@@ -63,26 +63,28 @@ class Table extends React.PureComponent {
 
 	// process logic on component mounting
 	componentDidMount() {
+
+		console.log( this.props.columnHeader);
 		// retrieve all udl values
-		this.getAllUdlValues()
-			.then((udlResult) => {
-				// initialise variables
-				let udlValues = [];
+		// this.getAllUdlValues()
+		// 	.then((udlResult) => {
+		// 		// initialise variables
+		// 		let udlValues = [];
 
-				// loop through values
-				this.state.tableUdlCodes.map((udl, index) => {
-					udlValues.push({
-						udlListCode: udl,
-						udlListValues: udlResult[index]
-					});
-				});
+		// 		// loop through values
+		// 		this.state.tableUdlCodes.map((udl, index) => {
+		// 			udlValues.push({
+		// 				udlListCode: udl,
+		// 				udlListValues: udlResult[index]
+		// 			});
+		// 		});
 
-				// set state
-				this.setState({
-					isLoading: false,
-					tableUdls: udlValues
-				});
-			});
+		// 		// set state
+		// 		this.setState({
+		// 			isLoading: false,
+		// 			tableUdls: udlValues
+		// 		});
+		// 	});
 	}
 
 	// retrieves the relevant URL
@@ -171,8 +173,8 @@ class Table extends React.PureComponent {
 								<Loader
 									type="RevolvingDot"
 									color="#574B90"
-									height="60"
-									width="60"
+									height="30"
+									width="30"
 								/>
 							</div>) :
 						(
@@ -189,7 +191,7 @@ class Table extends React.PureComponent {
 												(
 													<tr key={-1} className="center-align no-items">
 														<td key={-2} colSpan={this.getTotalColSpan()} className="center-align">
-															<div>NO ITEMS COULD BE LOADED. PLEASE ADD AN ITEM.</div>
+															<div>EMPTY LIST. PLEASE ADD AN ITEM.</div>
 														</td>
 													</tr>
 												) :

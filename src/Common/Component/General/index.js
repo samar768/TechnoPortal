@@ -2,7 +2,7 @@
 // import Accordion from './Accordion';
 // import Card from './Card';
 // import CardHeader from './Card';
-// import CardBodyHeader from './CardBodyHeader';
+ import CardBodyHeader from './CardBodyHeader';
 
 // import IonIcon from './IonIcon';
 // import PageLoader from './PageLoader';
@@ -14,15 +14,15 @@
 // import TextArea from './TextArea';
 // import ModalAlert from './ModalAlert';
 // import FullScreenLoader from './FullScreenLoader';
-// import ChildItemsControl from './ChildItemsControl';
+import ChildItemsControl from './ChildItemsControl';
 // import TableFooter from './TableFooter';
 // import ModalConfirmation from './ModalConfirmation';
 // import FileCsvUploadModal from './FileCsvUploadModal';
  import TextInput from './TextInput';
 // import Select from './Select';
 // import MaskFormatter from './MaskFormatter';
-// import Modal from './Modal';
-// import Table from './Table';
+ import Modal from './Modal';
+import Table from './Table';
 // import TotalsControl from './TotalsControl';
 import UDLSelect from './UDLSelect';
  import Numeral from './Numeral';
@@ -39,5 +39,10 @@ export {
 	ComponentLoader,
 	CalendarInput,
 	PageHeading,
-	TextInput
+	TextInput,
+	CardBodyHeader,
+	ChildItemsControl,
+	Modal,
+	Table
+
 };

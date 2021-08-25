@@ -54,7 +54,8 @@ class Modal extends React.PureComponent {
 			<div className="form-group col-6 col-sm-6 col-md-6 col-lg-4">
 				<div>
 					<div className="row">
-						{!IS_VIEW_MODE && !this.props.isLoading ? <a href="#" className="btn btn-primary btn-add-item mr-1" onClick={this.handleOnOpen}><i className="ion ion-plus"></i> {this.props.openModalText}</a> : ''}
+						{!IS_VIEW_MODE && !this.props.isLoading ? <a href="#" className="btn btn-primary btn-add-item mr-1" onClick={this.handleOnOpen}>
+							<i className="ion ion-plus"></i> {this.props.openModalText}</a> : ''}
 					</div>
 					<div className="modal fade" tabIndex="-1" id={this.props.modalId} role="dialog">
 						<div className="modal-dialog modal-dialog-centered modal-lg risk-screen" role="document">
@@ -83,7 +84,6 @@ class Modal extends React.PureComponent {
 								}
 								<div className="modal-footer">
 									<a href="#" className="btn btn-secondary btn-add-item" onClick={this.handleOnClose}>CLOSE</a>
-									{this.props.hasRateButton && !IS_VIEW_MODE ? <a href="#" className="btn btn-danger btn-add-item" onClick={this.props.handleOnRateClick || false}>RATE</a> : ''}
 									{!IS_VIEW_MODE ? <a href="#" className="btn btn-primary btn-add-item" onClick={this.props.handleOnSaveClick}>SAVE CHANGES</a> : ''}
 								</div>
 							</div>

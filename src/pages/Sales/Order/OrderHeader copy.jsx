@@ -24,7 +24,6 @@ import {
   GRAIN_LIST,
   GSM_LIST,
 } from "../../../Common/OrderContstant/list";
-
 import {
    CalendarInput,
   TextInput,
@@ -78,19 +77,6 @@ function OrderHeader(props) {
   var handleStateUpdates = (keyValueArray) => {
     props.handleStateUpdate(keyValueArray);
   };
-
-  // const handleOnDateChange = (event) => {
-  //   let keyValueArray = [
-  //     {
-  //       Key: event.target.name,
-  //       Value:
-  //         event.target.value === ""
-  //           ? format(new Date(), "yyyy-MM-dd 00:00:00")
-  //           : format(event.target.value, "yyyy-MM-dd 00:00:00"),
-  //     },
-  //   ];
-  //   props.handleStateUpdate(keyValueArray);
-  // };
 
   const onFormSubmit = (e) => {
     e.preventDefault();

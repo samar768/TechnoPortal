@@ -4,7 +4,7 @@ import AdvanceForm from "../../../js/FormAdvanced";
 import $ from 'jquery'
 import * as jQuery from "jquery"
 import Cleave from "cleave.js";
-import {UDLSelect,CalendarInput} from '../../../Common/Component/General/index.js';
+import {UDLSelect,CalendarInput,CardBodyHeader} from '../../../Common/Component/General/index.js';
 import OrderHeader from './OrderHeader';
 import OrderItemdetails from './OrderItemdetails';
 import ExpenseHeaderControl from './ExpenseHeaderControl';
@@ -91,6 +91,7 @@ export class SaleOrderPage extends Component {
               <div className="section-header">
                 <h1>Sale Order</h1>
               </div>
+            
             </section>
             <div className="section-body"></div>
     
@@ -101,6 +102,7 @@ export class SaleOrderPage extends Component {
               getFilteredList={this.props.getFilteredList}
               handleStateUpdate={this.HandleStateUpdate}
              /> 
+            
              <OrderItemdetails/>
             {/* <ExpenseHeaderControl/>
              <SaveCancelButtons/> */}

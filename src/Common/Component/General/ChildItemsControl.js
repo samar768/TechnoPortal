@@ -9,7 +9,6 @@ import clone from 'lodash/clone';
 import set from 'lodash/set';
 import {
 	CardBodyHeader,
-	FileCsvUploadModal,
 	Modal,
 	Table
 } from './index';
@@ -49,13 +48,6 @@ class ChildItemsControl extends React.PureComponent {
 		this.props.updateActiveItem(this.props.defaultItemState || {});
 	}
 
-	// handles the csv upload functionality
-	handleCsvUpload = () => {
-		// set state to open modal
-		this.setState({
-			isFileUploadOpenModal: true
-		});
-	}
 
 	// handles edit functionality for the modal
 	handleEditItem = (event, objectId) => {
@@ -131,44 +123,6 @@ class ChildItemsControl extends React.PureComponent {
 		});
 	}
 
-	// handles rate changes functionality for the modal
-	handleRateItem = () => {
-		// update state
-		this.setState({
-			isAddItem: false
-		});
-
-		// clone current state
-		let clonedActiveItem = clone(this.props.activeItem, true);
-
-		// check if OI property exists to determine if an item is being added or edited
-		if (!this.props.activeItem.hasOwnProperty('OI')) {
-			// set OI and US values
-			set(clonedActiveItem, 'OI', (Math.floor(100000 + Math.random() * 900000)).toString());
-			set(clonedActiveItem, 'US', '1');
-			set(clonedActiveItem, 'ADD_ITEM', '1');
-			set(clonedActiveItem, 'EDIT_ITEM', '0');
-			set(clonedActiveItem, 'DELETE_ITEM', '0');
-
-			// call update
-			this.props.processPersistChildItem(clonedActiveItem, true);
-		}
-		else {
-			// get US value
-			const us = get(clonedActiveItem, 'US', '');
-
-			// set US values 
-			if (us !== '1')
-				set(clonedActiveItem, 'US', '2');
-
-			set(clonedActiveItem, 'ADD_ITEM', '0');
-			set(clonedActiveItem, 'EDIT_ITEM', '1');
-			set(clonedActiveItem, 'DELETE_ITEM', '0');
-
-			// call update
-			this.props.processPersistChildItem(clonedActiveItem, true);
-		}
-	}
 
 	// handles save changes functionality for the modal
 	handleSaveItem = () => {
@@ -213,34 +167,6 @@ class ChildItemsControl extends React.PureComponent {
 		}
 	}
 
-	// handles the csv upload save
-	handleCsvUploadImport = (csvRows) => {
-		// loop through rows and add items to the parent
-		csvRows.map((row) => {
-			// declare variables
-			let rowItem = {};
-
-			// set OI and US values
-			set(rowItem, 'OI', (Math.floor(100000 + Math.random() * 900000)).toString());
-			set(rowItem, 'US', '1');
-			set(rowItem, 'ADD_ITEM', '1');
-			set(rowItem, 'EDIT_ITEM', '0');
-			set(rowItem, 'DELETE_ITEM', '0');
-
-			this.props.csvUploadFields.map((uf, index) => {
-				set(rowItem, uf, row[index].trim());
-			});
-
-			// call update
-			this.props.processPersistChildItem(rowItem, false);
-		});
-
-		// update state
-		this.setState({
-			isFileUploadOpenModal: false
-		});
-	}
-
 	// process view only logic
 	handleViewItem = (event, objectId) => {
 		// retrieve the relevant item based on the object id            
@@ -271,13 +197,6 @@ class ChildItemsControl extends React.PureComponent {
 		});
 	}
 
-	// handles the csv upload close
-	handleCsvUploadClose = () => {
-		// set state values
-		this.setState({
-			handleCsvUploadClose: false
-		});
-	}
 
 	// render the main cover selection
 	render() {
@@ -292,17 +211,7 @@ class ChildItemsControl extends React.PureComponent {
 		// render controls
 		return (
 			<div>
-				{
-					this.props.hasCsvUpload ? (
-						<FileCsvUploadModal
-							csvColumnNames={this.props.csvColumnNames}
-							isLoading={this.props.isLoading}
-							handleOpenModalClick={this.handleCsvUpload}
-							handleOnImportClick={this.handleCsvUploadImport}
-							handleOnCloseClick={this.handleCsvUploadClose}
-							openModal={this.state.isFileUploadOpenModal}
-						/>) : ''
-				}
+				
 				{this.props.tableHeaderText ? <CardBodyHeader headerText={this.props.tableHeaderText} /> : null}
 				<Table
 					isLoading={this.props.isLoading}
