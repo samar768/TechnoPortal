@@ -1,15 +1,22 @@
 import React from 'react'
+import { copyOwnProps } from 'fullcalendar';
+
+
 
 const SaveCancelButtons = (props) => {
     return (
         <>
             <div className="buttons">
             <div className="text-md-right">
-              <div className="float-lg-right mb-lg-0 mb-3"></div>
-              <button type='submit' className="btn btn-success btn-icon icon-left">
+              <div className="float-lg-right mb-lg-0 mb-3" ></div>
+              <button  className="btn btn-success btn-icon icon-left" 
+                      onClick={props.handleronSaveClick}>
+                         
               <i className="fas fa-check"></i>Save Order
               </button>
-              <button className="btn btn-danger btn-icon icon-left">
+              {/* </button> */}
+              <button className="btn btn-danger btn-icon icon-left" 
+                      onClick={(e)=>{ e.preventDefault();alert('alert'); return false;}} >
                <i className="fas fa-times"></i> Cancel Order
               </button>
             </div>

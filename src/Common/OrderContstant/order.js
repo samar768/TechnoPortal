@@ -299,8 +299,8 @@ export const ORDER_TABLE = {
 export const OrderHeaderFieldSchema =
 {
   PARTY_ORDER_NO: {
-    key: "TxtPOrdNo",
     label: "Party Order No",
+    key: "TxtPartyOrdNo",
     IsRequired: true,
     maxLength:35
   },

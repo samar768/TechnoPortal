@@ -25,12 +25,12 @@ import {
     
           return resolve(response);
         }
-        case PARTY: {
-          let response = set(data, CONTRACTUAL_ORDER_REF, '');
-          response = set(response, '', '');
+        // case PARTY: {
+        //   // let response = set(data, CONTRACTUAL_ORDER_REF, '');
+        //   // response = set(response, '', '');
   
-          return resolve(response)
-        }
+        //   return resolve(response)
+        // }
         default: {
           return resolve(data);
         }

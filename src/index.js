@@ -8,7 +8,7 @@ import reduxLogger from 'redux-logger';
 // eslint-disable-next-line no-undef
 import { BrowserRouter } from "react-router-dom";
 import reducers from './redux/reducers';
-import App from "./App";
+import App from "./Apps/App";
 
 // // Template JS File
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -67,9 +67,7 @@ require("jquery-ui-dist/jquery-ui.min.js");
 var moment = require("moment/min/moment.min.js");
 
 require("fullcalendar/dist/fullcalendar.min.css");
-
 require("inputmask/dist/inputmask/jquery.inputmask");
-
 require("select2/dist/js/select2.full");
 require("bootstrap-touchspin/dist/jquery.bootstrap-touchspin.min");
 require("bootstrap-tagsinput/dist/bootstrap-tagsinput");
@@ -124,10 +122,6 @@ require("./js/js/stisla");
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
-// const store = createStore(
-//     reducers,
-//     composeEnhancers(applyMiddleware(reduxThunk, reduxLogger))
-// );
 const store = createStore(
   reducers,
   composeEnhancers(applyMiddleware(reduxThunk))
@@ -145,7 +139,3 @@ ReactDOM.render(
 );
 
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: https://bit.ly/CRA-PWA
-// serviceWorker.unregister();

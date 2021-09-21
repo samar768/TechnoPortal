@@ -9,27 +9,13 @@ export const IS_VIEW_MODE = false;
 // declare constants for the api handler function
 // export const RISK_HANDLER_URL = `${baseUrl}Handlers/RiskHandler.ashx`;
 // export const INDUSTRY_HANDLER_URL = `${baseUrl}Handlers/IndustryCntrl.ashx`;
-export const GET_REQUEST = 'get';
-export const POST_REQUEST = 'post';
+export const GET_REQUEST = 'GET';
+export const POST_REQUEST = 'POST';
 export const HEADERS = {'Content-Type': 'text/html; charset=utf-8'};
-export const HEADERS_JSON = {'Content-Type': 'application/json; charset=utf-8'};
+export const HEADERS_JSON_CHARSET = {'Content-Type': 'application/json; charset=utf-8'};
+export const HEADERS_JSON = {'Content-Type':'application/json; charset=utf-8'};
 export const GET_UDL_HANDLER_METHOD_NAME = 'masters';
-export const ADDRESS_HANDLER_METHOD_NAME = 'GetRiskAddressList';
-export const ADDRESS_SINGLE_HANDLER_METHOD_NAME = 'GetRiskAddress';
-export const FETCH_DATASET_HANDLER_METHOD_NAME = 'GetRiskDataSet';
-export const FETCH_DATASET_OBJECT_HANDLER_METHOD_NAME = 'GetRiskDataSetObject';
-export const UPDATE_DATASET_HANDLER_METHOD_NAME = 'UpdateDataSet';
-export const UPDATE_DATASET_OBJECT_HANDLER_METHOD_NAME = 'UpdateDataSetObject';
-export const INDUSTRY_HANDLER_METHOD_NAME = 'GetAllIndustries';
-export const EXTENSIONS_HANDLER_METHOD_NAME = 'GetSectionExtensions';
-export const UPDATE_EXTENSIONS_HANDLER_METHOD_NAME = 'UpdateExtensions';
-export const DELETE_EXTENSIONS_HANDLER_METHOD_NAME = 'RemoveAllExtensions';
-export const PERSIST_DATASET_HANDLER_METHOD_NAME = 'PersistDataSet';
-export const MF_AGG_HANDLER_METHOD_NAME = 'GetMotorFleetAggregates';
-export const ITEMS_HANDLER_METHOD_NAME = 'GetSectionItems';
-export const UPDATE_ITEMS_HANDLER_METHOD_NAME = 'UpdateItems';
-export const UPDATE_DATASET_WO_PERSIST_HANDLER_METHOD_NAME = 'UpdateDataSetWithoutPersist';
-export const PERSIST_FINISH_HANDLER_METHOD_NAME = 'ProcessFinishButton';
+
 
 // declare constants for child items
 export const GET_CHILD_ITEMS_HANDLER_METHOD_NAME = 'GetChildItems';

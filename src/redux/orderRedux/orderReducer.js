@@ -1,20 +1,25 @@
 /* eslint-disable no-redeclare */
 /* eslint-disable import/no-anonymous-default-export */
 import _ from 'lodash';
-import { UPDATE_ORDER, UPDATE_ITEM_ORDER, REMOVE_ITEM_ORDER } from './orderTypes';
+import { UPDATE_ORDER, UPDATE_ITEM_ORDER, REMOVE_ITEM_ORDER } from './orderActionTypes';
 import { ITEM} from '../../Common/OrderContstant/order';
 
 
 // declare initial state
 const INITIAL_STATE = {
-  'items': {}
+  'items': {},
+  validation: {
+    validationObject:{}
+  }
 };
-
 export default (state = INITIAL_STATE, action) => {
+ 
+
   switch (action.type) {
     case UPDATE_ORDER:
       return { 
-        ...state, ...action.payload.data 
+        ...state, ...action.payload.data ,
+        validation:action.payload.validation
       };
     case UPDATE_ITEM_ORDER:
       var row = action.payload.row;

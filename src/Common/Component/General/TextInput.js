@@ -13,7 +13,7 @@ import  '../../../assets/css/custom.css';
 const TextInput = (props) => (
 
 	<div className={'form-group ' + props.inputSizes.join(' ')}>
-	
+
 		{props.labelDescription === '' ?
 			'' :
 			<label htmlFor={props.inputId}>{props.labelDescription}</label>
@@ -42,6 +42,7 @@ const TextInput = (props) => (
 					/>
 					<div className="invalid-feedback">
 						{props.validationMessage || ''}
+						{console.log(props.validationMessage)}
 					</div>
 				</div>
 			)

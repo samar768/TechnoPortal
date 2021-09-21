@@ -1,17 +1,12 @@
-import React,{useState,Component} from "react";
-import moment from "moment";
-import AdvanceForm from "../../../js/FormAdvanced";
-import $ from 'jquery'
-import * as jQuery from "jquery"
-import Cleave from "cleave.js";
-import {UDLSelect,CalendarInput,CardBodyHeader} from '../../../Common/Component/General/index.js';
+import React,{useState,Component,useEffect} from "react";
 import OrderHeader from './OrderHeader';
 import OrderItemdetails from './OrderItemdetails';
 import ExpenseHeaderControl from './ExpenseHeaderControl';
+import {SaveCancelButtons} from '../../../Common/Component/General/index';
 /* eslint-disable array-callback-return */
 import {Promise} from "bluebird";
 import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
+import { connect, useDispatch } from 'react-redux';
 import _, { set } from 'lodash';
 import {
   getFilteredList
@@ -19,30 +14,25 @@ import {
 } from '../../../redux/listRedux/listAction';
 
 import {
-  updateOrder, updateItemOrder, removeItemOrder
+  updateOrder, updateItemOrder, removeItemOrder,
+  initialiseSord,updateHeaderOrderData,PersistOrderData
 } from '../../../redux/orderRedux/orderAction';
 
 import {
   stateChange
 } from './OrderLogic';
-import {
-  SaveCancelButtons,
-} from "../../../Common/Component/General/index.js";
 
+function SaleOrderPage (props) {
+  const dispatch=useDispatch();
+  	// retrieve the Sord saved data on load
+	 useEffect(() => {
+    dispatch(initialiseSord(props.orderData));
+	}, []);
 
-export class SaleOrderPage extends Component {
-  constructor(props) {
-    super(props);
-    this.setDefaultData();
-    this.HandleStateUpdate = this.HandleStateUpdate.bind(this);
-    this.handleItemStateUpdate = this.handleItemStateUpdate.bind(this);
-    this.handleItemStateCreate = this.handleItemStateCreate.bind(this);
-    this.handleItemStateRemove = this.handleItemStateRemove.bind(this);
-  }
-  setDefaultData() {
+  const setDefaultData=()=> {
     //let clonedState = clone(this.props.orderData, true);
 
-    switch (this.props.order_type) {
+    switch (props.order_type) {
       case 'Add': {
 
         break;
@@ -50,37 +40,46 @@ export class SaleOrderPage extends Component {
       default:
     }
   }
-
-  async HandleStateUpdate(keyValueArray) {
-    let clonedState = _.cloneDeep(this.props.orderData);
+  const  HandleStateUpdate=async(keyValueArray)=> {
+    let clonedState = _.cloneDeep(props.orderData);
 
     await Promise.map(keyValueArray, async (keyValue) => {
-      let temp_state = await stateChange(keyValue.Key, keyValue.Value, clonedState, this.props.listData);
+      let temp_state = await stateChange(keyValue.Key, keyValue.Value, clonedState, props.listData);
 
       clonedState = set(temp_state, keyValue.Key, keyValue.Value);
     });
 
-    this.props.updateOrder(clonedState);
+    // props.updateHeaderOrderData(clonedState);
+
+    dispatch(updateHeaderOrderData(clonedState));
   }
 
-  handleItemStateUpdate(keyValueArray, row) {
-    let clonedItemState = _.cloneDeep(this.props.orderData.items[row]);
+  // const handleItemStateUpdate=(keyValueArray, row)=> {
+  //   let clonedItemState = _.cloneDeep(props.orderData.items[row]);
 
-    keyValueArray.map((keyValue) => {
-      clonedItemState =  set(clonedItemState, keyValue.Key, keyValue.Value);
-    });
+  //   keyValueArray.map((keyValue) => {
+  //     clonedItemState =  set(clonedItemState, keyValue.Key, keyValue.Value);
+  //   });
 
-    this.props.updateItemOrder(clonedItemState, row);
-  };
+  //   props.updateItemOrder(clonedItemState, row);
+  // };
 
-  handleItemStateCreate(keyValueArray, row) {
-    this.props.updateItemOrder(keyValueArray, row);
+  // const handleItemStateCreate=(keyValueArray, row)=> {
+  //   props.updateItemOrder(keyValueArray, row);
+  // }
+
+  // const handleItemStateRemove=(row)=> {
+  //   props.removeItemOrder(row);
+  // }
+
+  
+  function handleOnSaveClick(e) {
+    e.preventDefault();
+  // alert('The link was clicked.');
+   dispatch(PersistOrderData(props.orderData));
   }
-
-  handleItemStateRemove(row) {
-    this.props.removeItemOrder(row);
-  }
-  render() {
+  
+  
   return (
     <>
       <div className="form-group">
@@ -96,16 +95,16 @@ export class SaleOrderPage extends Component {
             <div className="section-body"></div>
     
            <OrderHeader 
-              orderData={ this.props.orderData}
-              getList={this.props.getList}
-              listData={this.props.listData}
-              getFilteredList={this.props.getFilteredList}
-              handleStateUpdate={this.HandleStateUpdate}
-             /> 
+              orderData={props.orderData}
+              getList={props.getList}
+              listData={props.listData}
+              getFilteredList={props.getFilteredList}
+              handleStateUpdate={HandleStateUpdate}
+             />  
             
-             <OrderItemdetails/>
-            {/* <ExpenseHeaderControl/>
-             <SaveCancelButtons/> */}
+           <OrderItemdetails/> 
+            {/* <ExpenseHeaderControl/>*/}
+             <SaveCancelButtons handleronSaveClick={handleOnSaveClick}/>  
              </div>
           </div>
       </form>
@@ -113,7 +112,7 @@ export class SaleOrderPage extends Component {
    </>
   );
   }
-}
+
 
 const mapStateToProps = (state, ownProps) => {
 	return {

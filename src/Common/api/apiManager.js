@@ -9,6 +9,7 @@ import {
 	HEADERS,
 	HEADERS_JSON
 } from '../constants';
+import  {toastOptionsError,toastOptionsSuccess} from '../../Common/Error/ErrorConstants';
 
 // issues get request to handler and returns result
 export const getResultFromServer = (handlerUrl, handlerParams,requestName) => {
@@ -42,37 +43,37 @@ export const getResultFromServer = (handlerUrl, handlerParams,requestName) => {
 	}
 };
 
-// issues post request to handler
-export const postDataToServer = (handlerUrl, handlerParams) => {
-	try {
-		// issue get request to handler
-		return new Promise((resolve, reject) => {
-			return axios({
-				url: handlerUrl,
-				method: POST_REQUEST,
-				data: handlerParams,
-				headers: HEADERS
-			})
-				.then((result) => {
-					resolve(result.data);
-				})
-				.catch((error) => {
-					reject(error);
-				});
-		});
-	}
-	catch (err) {
-		// configure toast options
-		const toastOptions = {
-			hideAfter: 5,
-			position: 'top-right',
-			heading: 'Error in postDataToServer'
-		};
+// // issues post request to handler
+// export const postDataToServer = (handlerUrl, handlerParams) => {
+// 	try {
+// 		// issue get request to handler
+// 		return new Promise((resolve, reject) => {
+// 			return axios({
+// 				url: handlerUrl,
+// 				method: POST_REQUEST,
+// 				data: handlerParams,
+// 				headers: HEADERS
+// 			})
+// 				.then((result) => {
+// 					resolve(result.data);
+// 				})
+// 				.catch((error) => {
+// 					reject(error);
+// 				});
+// 		});
+// 	}
+// 	catch (err) {
+// 		// configure toast options
+// 		const toastOptions = {
+// 			hideAfter: 5,
+// 			position: 'top-right',
+// 			heading: 'Error in postDataToServer'
+// 		};
 
-		// display error message
-		cogoToast.error(`There was an error issuing a post request: (${err.message})`, toastOptions);
-	}
-};
+// 		// display error message
+// 		cogoToast.error(`There was an error issuing a post request: (${err.message})`, toastOptions);
+// 	}
+// };
 
 // issues get request to handler and returns result
 export const getResultFromRestAPI= (handlerUrl, handlerParams,requestName) => {
@@ -105,3 +106,29 @@ export const getResultFromRestAPI= (handlerUrl, handlerParams,requestName) => {
 		cogoToast.error(`There was an error issuing a get request: (${err.message})`, toastOptions);
 	}
 };
+export const postDataToServer = (handlerUrl,handlerParams) => {
+	try {
+		
+		// issue get request to handler
+		return new Promise((resolve, reject) => {
+			return axios({
+				url:handlerUrl ,
+				method: POST_REQUEST,
+				data:  handlerParams
+			})
+				.then((result) => {
+					cogoToast.success(`Success post request!!`, toastOptionsSuccess);
+					resolve(result.data);
+					
+				})
+				.catch((error) => {
+					reject(error);
+				});
+		});
+	}
+	catch (err) {
+				// display error message
+		cogoToast.error(`There was an error issuing a post request: (${err.message})`, toastOptionsError);
+	}
+};
+

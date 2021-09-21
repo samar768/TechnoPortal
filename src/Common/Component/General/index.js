@@ -30,6 +30,7 @@ import ComponentLoader from './ComponentLoader';
 import CalendarInput from './CalendarInput';
 import  SaveCancelButtons from './SaveCancelButtons'
 import PageHeading from './PageHeading';
+// import DropdownTableCtrl from './DropDownTable';
 
 // export for ease of access
 export {
@@ -44,5 +45,6 @@ export {
 	ChildItemsControl,
 	Modal,
 	Table
+	// DropdownTableCtrl
 
 };
