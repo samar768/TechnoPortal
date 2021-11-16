@@ -11,6 +11,8 @@ export const IS_VIEW_MODE = false;
 // export const INDUSTRY_HANDLER_URL = `${baseUrl}Handlers/IndustryCntrl.ashx`;
 export const GET_REQUEST = 'GET';
 export const POST_REQUEST = 'POST';
+export const PUT_REQUEST = 'PUT';
+export const DELETE_REQUEST = 'DELETE';
 export const HEADERS = {'Content-Type': 'text/html; charset=utf-8'};
 export const HEADERS_JSON_CHARSET = {'Content-Type': 'application/json; charset=utf-8'};
 export const HEADERS_JSON = {'Content-Type':'application/json; charset=utf-8'};

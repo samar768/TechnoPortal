@@ -35,6 +35,14 @@ export const initialiseSordObject = (dispatch,
 		dispatch(processReduxActionStarted(startedActionType));
 	}
 
+	// if (startedActionType !== '') {
+	// 	dispatch(getOrderData(startedActionType));
+	// }
+
+		if (startedActionType !== '') {
+		dispatch(startedActionType(riskObject));
+	}
+	
 	// process adjustment calculations
 	if (typeof calculationFunction === 'function')
 		riskObject = calculationFunction(riskObject);

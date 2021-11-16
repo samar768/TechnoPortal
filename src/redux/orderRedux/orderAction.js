@@ -11,10 +11,12 @@ import {
 import {
   initialiseSordObject,
 } from '../../Common/Redux/CommonRedux';
-import {postDataToServer} from '../../Common/api/apiManager';
+import {postDataToServer,getDataFromServer} from '../../Common/api/apiManager';
 import cogoToast from 'cogo-toast';
+import { toastOptionsError } from '../../Common/Error/ErrorConstants';
 
 const ORDER_POST_API='https://paper-de9be-default-rtdb.firebaseio.com/sord.json';
+const ORDER_GET_API='https://paper-de9be-default-rtdb.firebaseio.com/sord.json';
 
 /// This is an Action creater where a function  take the action creater and return again a function.
 /// In this case this function called and again dispatch action excuted internally by the redux
@@ -90,7 +92,7 @@ export const FetchOrder = (orderData) => {
 export const initialiseSord = (SordObject) => {
   return (dispatch) => {
     // dispatch initial state
-    initialiseSordObject(dispatch, '',
+    initialiseSordObject(dispatch, getOrderData,
       UPDATE_ORDER,
       SordObject,
       processSordValidation,
@@ -127,21 +129,8 @@ export const PersistOrderData = (SordObject) => {
   .then((riskObjectResult) => {
     // validate return result
     if (riskObjectResult !== null) {
-      // process validation and calculations
-      // initialiseUpdateRiskObject(
-      //   dispatch,
-      //   '',
-      //   successActionType,
-      //   get(riskObjectResult.DATA_SET.RISK_OBJECTS[policyBinderObjectName], xmlParentName, {}),
-      //   validationFunction,
-      //   validationPropertyArray,
-      //   calculationFunction
-      // );
+      //Work TO DO Check If the call has been succesfully posted
     }
-  })
-  .then(() => {
-    // dispatch application loading state
-    // dispatch(updateLoadingAppGeneral(false));
   })
   .catch((error) => {
     const toastOptions = {
@@ -151,6 +140,36 @@ export const PersistOrderData = (SordObject) => {
 		};
     // display error in a toast message
     cogoToast.error(`There was an error issuing a post request: (${error.message})`,toastOptions);
+  });
+  };
+};
+export const getOrderData = (DOCID) => {
+  return (dispatch) => {
+  	// declare parameters for api call
+	const handlerParams = {
+		// 'key': ''
+	};
+   // retrieve initial dataset from the server
+  getDataFromServer(ORDER_GET_API, handlerParams)
+  .then((SordObjectResult) => {
+    // validate return result
+    if (SordObjectResult !== null) {
+      //process validation and calculations
+      initialiseSordObject(dispatch, '',
+      UPDATE_ORDER,
+      SordObjectResult,
+      processSordValidation,
+      ['SORDHEADERValid'],
+      '');
+    }
+  })
+  .then(() => {
+    // dispatch application loading state
+    // dispatch(updateLoadingAppGeneral(false));
+  })
+  .catch((error) => {
+    // display error in a toast message
+    cogoToast.error(`There was an error issuing a post request: (${error.message})`,toastOptionsError);
   });
   };
 };

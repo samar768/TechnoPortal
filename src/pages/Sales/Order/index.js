@@ -15,7 +15,8 @@ import {
 
 import {
   updateOrder, updateItemOrder, removeItemOrder,
-  initialiseSord,updateHeaderOrderData,PersistOrderData
+  initialiseSord,updateHeaderOrderData,PersistOrderData,
+  getOrderData
 } from '../../../redux/orderRedux/orderAction';
 
 import {
@@ -24,8 +25,11 @@ import {
 
 function SaleOrderPage (props) {
   const dispatch=useDispatch();
+
+
   	// retrieve the Sord saved data on load
 	 useEffect(() => {
+    //  dispatch(getOrderData(props.orderData.DOCID));
     dispatch(initialiseSord(props.orderData));
 	}, []);
 

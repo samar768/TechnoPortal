@@ -16,6 +16,8 @@ const UDLSelect = (props) => {
 	// retrieve and sort the udl the udl
 	let udlList = getUDLList(props.udlListName, props.udlListType);
 
+	console.log(props.defaultValue);
+
 	// udlList = udlList.sort((a, b) => a.Description.localeCompare(b.Description));
 
 	// renders the select control
@@ -99,7 +101,7 @@ const UDLSelect = (props) => {
 							className={`form-control ${props.isValid === false ? 'is-invalid' : ''} ${props.isMandatory ? 'is-required-field' : ''}`}
 							onChange={props.isViewOnly ? false : props.handleOnChange}
 							disabled={IS_VIEW_MODE || props.isDisabled || props.isViewOnly}
-						    defaultValue={`SORD`}
+						    defaultValue={props.defaultValue}
 						>
 							{renderSelect(udlList, props.defaultPleaseSelect, props.defaultValue, props.exclusionList)}
 						</select>

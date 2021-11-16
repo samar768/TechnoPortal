@@ -4,7 +4,7 @@ export const TYPE = 'TxtType';
 export const PARTY = 'TxtParty';
 export const PARTY_ORDER_NO = 'TxtPOrdNo';
 export const PARTY_ORDER_DATE = 'TxtPtyOrdDate';
-export const ORDER_NO = 'TxtRecId';
+export const ORDER_NO = 'TxtOrderNo';
 export const ORDER_DATE = 'TxtOrdDate';
 export const AGAINST_FORM = 'TxtAgtForm';
 export const EXCISABLE = 'TxtExcisable';
@@ -72,22 +72,6 @@ export const ITEM = {
   ITEM_ADJ_WEIGHT: 'ItemAdjWeight',
 };
 
-// export const s = 'ItemDesc';
-// export const s = 'SizeReel';
-// export const s = 'SizeHeight';
-// export const s = 'SizeUnit';
-// export const s = 'SizeCM';
-// export const s = 'SizeInch';
-// export const s = 'GSMName';
-// export const s = 'GSM';
-// export const = 'SKU';
-// export const = 'Rate';
-// export const = 'BalanceReel';
-// export const = 'BalanceWeight';
-// export const = 'BF';
-// export const = 'BFName';
-// export const = 'Grain';
-
 export const ORDER_TABLE = {
   columns: {
     ID: 'ID',
@@ -108,15 +92,6 @@ export const ORDER_TABLE = {
     ItemSecUnit: 'ItemSecUnit',
     BalanceWeight: 'BalanceWeight',
     SKU: 'SKU',
-    // description: 'description',
-    // bfcode: 'bfcode',
-    // bf: 'bf',
-    // width: 'width',
-    // heigth: 'height',
-    // unit: 'unit',
-    // sizecm: 'sizecm',
-    // sizeinch: 'sizeinch',
-    // grain: 'grain',
     delbtn: 'delbtn',
     editbtn: 'editbtn',
   },

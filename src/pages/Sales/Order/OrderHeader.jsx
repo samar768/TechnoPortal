@@ -65,16 +65,9 @@ function OrderHeader(props) {
     console.log(props.listData[ORDER_TYPES_LIST]);
   }, [ORDER_TYPES_LIST]);
 
-  // -===================================Samar Implementation================================
-  const [inputValues, setInputValues] = useState({});
 
   var handleStateUpdates = (keyValueArray) => {
     props.handleStateUpdate(keyValueArray);
-  };
-
-  const onFormSubmit = (e) => {
-    e.preventDefault();
-    console.log("Form has been submit");
   };
 
   return (
@@ -135,10 +128,8 @@ function OrderHeader(props) {
                                 selectId={OrderHeaderFieldSchema.TYPE.key}
                                 selectSizes={["col-sm-12 col-md-4 col-lg-4"]}
                                 defaultPleaseSelect={true}
-                                defaultValue={get(
-                                  props.orderData,
-                                  OrderHeaderFieldSchema.TYPE.key,
-                                  ""
+                                defaultValue={get(props.orderData,OrderHeaderFieldSchema.TYPE.key,
+                                  ''
                                 )}
                                 value={get(
                                   props.orderData,

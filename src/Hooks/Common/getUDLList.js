@@ -9,7 +9,7 @@ import {
 	RISK_HANDLER_URL
 } from '../../Common/constants.js';
 import {
-	getResultFromRestAPI
+	getResultFromServer
 } from '../../Common/api/apiManager';
 import GetStaticListData from '../../StaticData/GetStaticListData'
 import convertJSONstringtoObject from '../../Helpers/utilities'
@@ -197,7 +197,7 @@ const GetUDLList = (udlListName, udlListType) => {
 				// override for Developement Purpose
 				var RISK_HANDLER_URL_Dev='http://localhost:65008/masters' ;
 				// retrieve UDL list from server
-				const response = await getResultFromRestAPI(RISK_HANDLER_URL_Dev, handlerParams); 
+				const response = await getResultFromServer(RISK_HANDLER_URL_Dev, handlerParams); 
 		
 				// return list
 				setUdl(response);

@@ -42,3 +42,11 @@
 .child-table td {
     font-size: 11px;
 }
+.main-content {   
+    background: url('../img/cover3.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;   
+}
+
