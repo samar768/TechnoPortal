@@ -142,10 +142,10 @@ function App(props) {
         <>
    
           {
-          !props.isAuthUser  ? (
+          props.isAuthUser  ? (
             <>
                 <React.Suspense fallback={<h1>Still Loading…</h1>}>
-                  <Route path="/" exact component={LoginNew} />
+                  <Route path="/" exact component={EcommerceDashboard} />
                 </React.Suspense>
             </>
           ) : (
