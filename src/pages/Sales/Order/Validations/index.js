@@ -17,18 +17,25 @@ export const isOrderHeaderValid = (OrderObject) => {
 		return {};
 	}
 }
-
 // processes validation for electronic equipment
 export const processSordValidation = (riskDataSet) => {
 	// execute validation for the cover details selection screen
 	const OrderHeaderValidObject = isOrderHeaderValid(riskDataSet);
+	const sordInvalidSection=[];
 
 	// update the section validation status
-	const isSectionValid = OrderHeaderValidObject.isValid ;
+	const isItemsValid = false; ;
+	const IsSORDHeaderSectionValid = OrderHeaderValidObject.isValid ;
+
+	if (!IsSORDHeaderSectionValid){
+		sordInvalidSection.push("HeaderDetails");
+	}
 
 	// return validation object
 	return {
-		SORDValid: isSectionValid,
+		SORDHeaderValid: IsSORDHeaderSectionValid,
+		SORDItemsValid: isItemsValid,
 		validationObject: OrderHeaderValidObject,
+		sordInvalidSection:sordInvalidSection
 	}
 }

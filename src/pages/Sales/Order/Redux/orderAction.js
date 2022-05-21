@@ -6,14 +6,14 @@ import {
 // import validation methods
 import {
   processSordValidation
-} from '../../pages/Sales/Order/Validations';
+} from '../Validations';
 
 import {
   initialiseSordObject,
-} from '../../Common/Redux/CommonRedux';
-import {postDataToServer,getDataFromServer} from '../../Common/api/apiManager';
+} from '../../../../Common/Redux/CommonRedux';
+import {postDataToServer,getDataFromServer} from '../../../../Common/api/apiManager';
 import cogoToast from 'cogo-toast';
-import { toastOptionsError } from '../../Common/Error/ErrorConstants';
+import { toastOptionsError } from '../../../../Common/Error/ErrorConstants.js';
 
 const ORDER_POST_API='https://paper-de9be-default-rtdb.firebaseio.com/sord.json';
 const ORDER_GET_API='https://paper-de9be-default-rtdb.firebaseio.com/sord.json';

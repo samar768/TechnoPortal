@@ -70,6 +70,7 @@ export const ITEM = {
   ITEM_ADJ: 'ItemAdj',
   ITEM_ADJ_REEL: 'ItemAdjReel',
   ITEM_ADJ_WEIGHT: 'ItemAdjWeight',
+  ITEM_QTY: 'Qty',
 };
 
 export const ORDER_TABLE = {

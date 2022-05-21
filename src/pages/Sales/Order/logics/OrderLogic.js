@@ -8,11 +8,11 @@ import {
     , V_NO
     , PARTY
     , CONTRACTUAL_ORDER_REF
-  } from '../../../Common/OrderContstant/order.js';
+  } from '../../../../Common/OrderContstant/order.js';
   
   import {
     processLogic
-  } from '../../../api/index';
+  } from '../../../../api/index';
   
   export const stateChange = async (key, value, data, list_data) => 
     new Promise(async resolve => {
@@ -36,4 +36,11 @@ import {
         }
       }
     });
-  
+
+    export const processFormValidation=(sordObjects,validationobject)=>{
+
+      const isHeaderdetailsValid=false;
+      const isItemsGridValid=false;
+
+          return isHeaderdetailsValid
+    }

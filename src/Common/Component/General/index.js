@@ -4,19 +4,19 @@
 // import CardHeader from './Card';
  import CardBodyHeader from './CardBodyHeader';
 
-// import IonIcon from './IonIcon';
+ import IonIcon from './IonIcon';
 // import PageLoader from './PageLoader';
-// import NumericFormatter from './NumericFormatter';
+import NumericFormatter from './NumericFormatter';
 // import InputFieldLoader from './InputFieldLoader';
 // import ProgressBarItem from './ProgressBarItem';
-// import Checkbox from './Checkbox';
+import Checkbox from './Checkbox';
 // import componentConstants from './componentConstants';
 // import TextArea from './TextArea';
 // import ModalAlert from './ModalAlert';
 // import FullScreenLoader from './FullScreenLoader';
 import ChildItemsControl from './ChildItemsControl';
 // import TableFooter from './TableFooter';
-// import ModalConfirmation from './ModalConfirmation';
+import ModalConfirmation from './ModalConfirmation';
 // import FileCsvUploadModal from './FileCsvUploadModal';
  import TextInput from './TextInput';
 // import Select from './Select';
@@ -31,6 +31,7 @@ import CalendarInput from './CalendarInput';
 import  SaveCancelButtons from './SaveCancelButtons'
 import PageHeading from './PageHeading';
 // import DropdownTableCtrl from './DropDownTable';
+import Card from './Card';
 
 // export for ease of access
 export {
@@ -44,7 +45,10 @@ export {
 	CardBodyHeader,
 	ChildItemsControl,
 	Modal,
-	Table
-	// DropdownTableCtrl
-
+	Table,
+	IonIcon,
+	ModalConfirmation,
+	Card,
+	Checkbox,
+	NumericFormatter
 };

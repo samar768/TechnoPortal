@@ -28,6 +28,22 @@ class ModalConfirmation extends React.PureComponent {
 		this.props.handleOnNoClick();
 	}
 
+
+	buttonLogictoRender = () => {
+		
+			if (this.props.confirmation)
+			{
+		return(	
+		    <><a href="#" className="btn btn-danger btn-add-item" onClick={this.handleOnClose}><IonIcon iconClass='ion-close' /> No</a>
+			<a href="#" className="btn btn-success btn-add-item" onClick={this.props.handleOnYesClick}><IonIcon iconClass='ion-checkmark' /> Yes</a>
+			</>
+		)
+			  }
+			else {
+				return (<a href="#" className="btn btn-danger btn-add-item" onClick={this.handleOnClose}><IonIcon iconClass='ion-close' /> Close</a>)
+			}
+	}
+
 	// render the component
 	render() {
 		// determine if the modal should be open or closed
@@ -56,8 +72,8 @@ class ModalConfirmation extends React.PureComponent {
 									{this.props.children}
 								</div>
 								<div className="modal-footer">
-									<a href="#" className="btn btn-danger btn-add-item" onClick={this.handleOnClose}><IonIcon iconClass='ion-close' /> No</a>
-									<a href="#" className="btn btn-success btn-add-item" onClick={this.props.handleOnYesClick}><IonIcon iconClass='ion-checkmark' /> Yes</a>
+									
+								{this.buttonLogictoRender()}
 								</div>
 							</div>
 						</div>

@@ -2,7 +2,7 @@
 /* eslint-disable import/no-anonymous-default-export */
 import _ from 'lodash';
 import { UPDATE_ORDER, UPDATE_ITEM_ORDER, REMOVE_ITEM_ORDER } from './orderActionTypes';
-import { ITEM} from '../../Common/OrderContstant/order';
+import { ITEM} from '../../../../Common/OrderContstant/order';
 
 
 // declare initial state

@@ -8,6 +8,7 @@ import {Promise} from "bluebird";
 import PropTypes from 'prop-types';
 import { connect, useDispatch } from 'react-redux';
 import _, { set } from 'lodash';
+import get from 'lodash/get';
 import {
   getFilteredList
   , getList
@@ -17,17 +18,18 @@ import {
   updateOrder, updateItemOrder, removeItemOrder,
   initialiseSord,updateHeaderOrderData,PersistOrderData,
   getOrderData
-} from '../../../redux/orderRedux/orderAction';
+} from './Redux/orderAction';
 
 import {
-  stateChange
-} from './OrderLogic';
+  stateChange,
+  processFormValidation
+} from './logics/OrderLogic';
 
 function SaleOrderPage (props) {
   const dispatch=useDispatch();
 
 
-  	// retrieve the Sord saved data on load
+  	// retrieve the Sord saved data onlogics/ load
 	 useEffect(() => {
     //  dispatch(getOrderData(props.orderData.DOCID));
     dispatch(initialiseSord(props.orderData));
@@ -82,7 +84,7 @@ function SaleOrderPage (props) {
   // alert('The link was clicked.');
    dispatch(PersistOrderData(props.orderData));
   }
-  
+  console.log(get(props.riskSasriaValidation, 'sordInvalidSection', []));
   
   return (
     <>
@@ -108,7 +110,17 @@ function SaleOrderPage (props) {
             
            <OrderItemdetails/> 
             {/* <ExpenseHeaderControl/>*/}
-             <SaveCancelButtons handleronSaveClick={handleOnSaveClick}/>  
+             <SaveCancelButtons 
+                             handleronSaveClick={handleOnSaveClick}
+                             handleronAbortClick={(function(e) {
+                              e.preventDefault();
+                              alert('Cancel Successfully');
+                              return false;
+                            }) }
+                            processFormValidation={processFormValidation}
+                            invalidSections={get(props.riskSasriaValidation, 'sordInvalidSection', [])}
+                            title="Sale Order"
+                             />  
              </div>
           </div>
       </form>
@@ -125,6 +137,7 @@ const mapStateToProps = (state, ownProps) => {
 		orderData: state.orderData,
 		listData: state.listData,
     authData: state.authData,
+    riskSasriaValidation:state.orderData.validation
 	};
 }
 
